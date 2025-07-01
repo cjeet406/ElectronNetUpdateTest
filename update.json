@@ -1,6 +1,6 @@
 {
   "latestVersion": "1.0.0",
-  "downloadUrl": "https://github.com/cjeet406/ElectronNetUpdateTest/releases/download/v1.0.0/app-1.0.0.exe",
+  "downloadUrl": "https://github.com/cjeet406/ElectronNetUpdateTest/releases/download/v1.0.0/Electron.NET.App.Setup.1.0.0.exe",
   "isMandatory": false,
   "notes": "Initial release of Electron.NET auto-update test app"
 }
