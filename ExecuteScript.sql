@@ -1047,8 +1047,8 @@ DECLARE @v_userId_Int int, @v_companyId_Int int, @v_ContactId_Int bigint
 			,hu.UserTypeId, usertype.RecordName as UserType
 			, s.AttendanceAccess as AttendanceAccess
 
-			--, h.HospitalMasterId as MasterHospitalId
-			, 24 as MasterHospitalId
+			, h.HospitalMasterId as MasterHospitalId
+			--, 24 as MasterHospitalId
 
 			from hospital.tblHospitalUsers hu with (nolock)
 			inner join hospital.tblHospital h on hu.HospitalId=h.HospitalId
