@@ -1,3701 +1,251 @@
-EXEC sys.sp_dropextendedproperty @name=N'MS_Description' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblUserLogin', @level2type=N'COLUMN',@level2name=N'LoginAccessStatus'
-GO
-EXEC sys.sp_dropextendedproperty @name=N'MS_Description' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblHospitalUsers', @level2type=N'COLUMN',@level2name=N'EmployeeTypeId'
-GO
-EXEC sys.sp_dropextendedproperty @name=N'MS_Description' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblHospitalContacts', @level2type=N'COLUMN',@level2name=N'ContactEntityType'
-GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_taluka]    Script Date: 13-02-2026 09:30:13 ******/
+
+/****** Object:  StoredProcedure [patient].[Usp_Manage_taluka]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_taluka]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_states]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_states]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_states]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_regiondetails]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_regiondetails]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_regiondetails]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_PinCodes]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_PinCodes]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_PinCodes]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_patientNames]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_patientNames]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_patientNames]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_LastNames]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_LastNames]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_LastNames]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_Landmarks]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_Landmarks]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_Landmarks]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_HusbandNames]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_HusbandNames]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_HusbandNames]
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_District]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_District]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_District]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_UserTemplateSettings]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_UserTemplateSettings]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_UserTemplateSettings]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_SubscriptionExecution]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_SubscriptionExecution]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_SubscriptionExecution]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity_16_06_2025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity_16_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_VillageCity_16_06_2025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_VillageCity]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports_19042025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgReports_19042025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgReports]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_23022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_23022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgDetails_23022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_19022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_19022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgDetails_19022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_14032025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_14032025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgDetails_14032025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_04032025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_04032025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgDetails_04032025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UsgDetails]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UserSettings]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UserSettings]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_UserSettings]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Users]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Users]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Users]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_tblIndoorRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_tblIndoorRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_tblIndoorRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_16_06_2025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_16_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Talukas_16_06_2025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_15_06_2025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_15_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Talukas_15_06_2025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Talukas]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Subscriptions]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Subscriptions]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Subscriptions]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_States]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_States]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_States]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Society]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Society]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Society]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader_BKP]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader_BKP]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_ReportHeader_BKP]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_ReportHeader]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Plans]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Plans]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Plans]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PincodeLocations]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PincodeLocations]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_PincodeLocations]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_24022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_24022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_PatientVisits_24022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_07032025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_07032025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_PatientVisits_07032025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_PatientVisits]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_bkp_19_10_2024]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_bkp_19_10_2024]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_bkp_19_10_2024]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_30122024]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_30122024]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_30122024]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_23012024]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_23012024]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_23012024]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_21102025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_21102025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_21102025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_15022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_15022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_15022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_03052025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_03052025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_03052025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_02072025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_02072025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients_02072025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Patients]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientDischarge]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientDischarge]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_PatientDischarge]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles_19042025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_OvulationProfiles_19042025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_OvulationProfiles]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OTCharges]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OTCharges]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_OTCharges]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OpdRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OpdRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_OpdRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_19042025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_MTPs_19042025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_13022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_13022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_MTPs_13022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_MTPs]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ModuleRights]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ModuleRights]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_ModuleRights]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Medicines]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Medicines]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Medicines]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Items]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Items]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Items]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRoundRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRoundRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_IndoorRoundRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords_19042025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_IndoorRecords_19042025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_IndoorRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Hospitals]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Hospitals]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Hospitals]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Histolap]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Histolap]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Histolap]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Groups]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Groups]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Groups]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_EntityRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_EntityRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_EntityRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Districts]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Districts]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Districts]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Diagnosis]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Diagnosis]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Diagnosis]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_19042025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_DeliveryRecords_19042025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13032025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13032025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_DeliveryRecords_13032025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13022025]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13022025]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_DeliveryRecords_13022025]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_DeliveryRecords]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DataSync]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DataSync]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_DataSync]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_City]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_City]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_City]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_BillVouchers]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_BillVouchers]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_BillVouchers]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Bills]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Bills]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Bills]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_AutoSync_Medicines]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_AutoSync_Medicines]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_AutoSync_Medicines]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Area]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Area]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Area]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Advice]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Advice]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_Manage_Advice]
 GO
-/****** Object:  StoredProcedure [dbo].[usp_Login]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[usp_Login]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[usp_Login]
 GO
-/****** Object:  StoredProcedure [dbo].[USP_GETDATE]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[USP_GETDATE]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[USP_GETDATE]
 GO
-/****** Object:  StoredProcedure [dbo].[USP_GenBakup]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[USP_GenBakup]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[USP_GenBakup]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_SPForTable]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_SPForTable]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_AutoGenerate_SPForTable]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_EntityLayerForTable]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_EntityLayerForTable]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_AutoGenerate_EntityLayerForTable]
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_DataLayerForTable]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_DataLayerForTable]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [dbo].[Usp_AutoGenerate_DataLayerForTable]
 GO
-/****** Object:  StoredProcedure [appadvertise].[Usp_Manage_Advertisements]    Script Date: 13-02-2026 09:30:13 ******/
+/****** Object:  StoredProcedure [appadvertise].[Usp_Manage_Advertisements]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [appadvertise].[Usp_Manage_Advertisements]
 GO
-/****** Object:  Table [sync].[tblStates]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sync].[tblStates]') AND type in (N'U'))
-DROP TABLE [sync].[tblStates]
-GO
-/****** Object:  Table [sync].[tblMedicineNames]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sync].[tblMedicineNames]') AND type in (N'U'))
-DROP TABLE [sync].[tblMedicineNames]
-GO
-/****** Object:  Table [sync].[tblLastNames]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sync].[tblLastNames]') AND type in (N'U'))
-DROP TABLE [sync].[tblLastNames]
-GO
-/****** Object:  Table [sync].[tblFirstNames]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[sync].[tblFirstNames]') AND type in (N'U'))
-DROP TABLE [sync].[tblFirstNames]
-GO
-/****** Object:  Table [subscription].[tblSubscriptions]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[subscription].[tblSubscriptions]') AND type in (N'U'))
-DROP TABLE [subscription].[tblSubscriptions]
-GO
-/****** Object:  Table [subscription].[tblPlans]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[subscription].[tblPlans]') AND type in (N'U'))
-DROP TABLE [subscription].[tblPlans]
-GO
-/****** Object:  Table [patient].[tblUsgReports]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblUsgReports]') AND type in (N'U'))
-DROP TABLE [patient].[tblUsgReports]
-GO
-/****** Object:  Table [patient].[tblUsgDetails]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblUsgDetails]') AND type in (N'U'))
-DROP TABLE [patient].[tblUsgDetails]
-GO
-/****** Object:  Table [patient].[tblPatientVisits]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblPatientVisits]') AND type in (N'U'))
-DROP TABLE [patient].[tblPatientVisits]
-GO
-/****** Object:  Table [patient].[tblPatients_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblPatients_bkp]') AND type in (N'U'))
-DROP TABLE [patient].[tblPatients_bkp]
-GO
-/****** Object:  Table [patient].[tblPatients]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblPatients]') AND type in (N'U'))
-DROP TABLE [patient].[tblPatients]
-GO
-/****** Object:  Table [patient].[tblPatientDischarge]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblPatientDischarge]') AND type in (N'U'))
-DROP TABLE [patient].[tblPatientDischarge]
-GO
-/****** Object:  Table [patient].[tblPatientCases]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblPatientCases]') AND type in (N'U'))
-DROP TABLE [patient].[tblPatientCases]
-GO
-/****** Object:  Table [patient].[tblOvulationProfile]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblOvulationProfile]') AND type in (N'U'))
-DROP TABLE [patient].[tblOvulationProfile]
-GO
-/****** Object:  Table [patient].[tblMTP_04032025]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblMTP_04032025]') AND type in (N'U'))
-DROP TABLE [patient].[tblMTP_04032025]
-GO
-/****** Object:  Table [patient].[tblMTP]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblMTP]') AND type in (N'U'))
-DROP TABLE [patient].[tblMTP]
-GO
-/****** Object:  Table [patient].[tblInvestigation]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblInvestigation]') AND type in (N'U'))
-DROP TABLE [patient].[tblInvestigation]
-GO
-/****** Object:  Table [patient].[tblIndoorRecords_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblIndoorRecords_bkp]') AND type in (N'U'))
-DROP TABLE [patient].[tblIndoorRecords_bkp]
-GO
-/****** Object:  Table [patient].[tblIndoorRecords]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblIndoorRecords]') AND type in (N'U'))
-DROP TABLE [patient].[tblIndoorRecords]
-GO
-/****** Object:  Table [patient].[tblHistolap]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblHistolap]') AND type in (N'U'))
-DROP TABLE [patient].[tblHistolap]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords_otherlanguage]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblDeliveryRecords_otherlanguage]') AND type in (N'U'))
-DROP TABLE [patient].[tblDeliveryRecords_otherlanguage]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords_13032025]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblDeliveryRecords_13032025]') AND type in (N'U'))
-DROP TABLE [patient].[tblDeliveryRecords_13032025]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblDeliveryRecords]') AND type in (N'U'))
-DROP TABLE [patient].[tblDeliveryRecords]
-GO
-/****** Object:  Table [patient].[tblBillVoucher]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblBillVoucher]') AND type in (N'U'))
-DROP TABLE [patient].[tblBillVoucher]
-GO
-/****** Object:  Table [patient].[tblBill]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tblBill]') AND type in (N'U'))
-DROP TABLE [patient].[tblBill]
-GO
-/****** Object:  Table [patient].[tbl_Villagecity]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_Villagecity]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_Villagecity]
-GO
-/****** Object:  Table [patient].[tbl_testing]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_testing]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_testing]
-GO
-/****** Object:  Table [patient].[tbl_taluka]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_taluka]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_taluka]
-GO
-/****** Object:  Table [patient].[tbl_state]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_state]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_state]
-GO
-/****** Object:  Table [patient].[tbl_regiondetails]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_regiondetails]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_regiondetails]
-GO
-/****** Object:  Table [patient].[tbl_PinCode]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_PinCode]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_PinCode]
-GO
-/****** Object:  Table [patient].[tbl_PatientName]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_PatientName]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_PatientName]
-GO
-/****** Object:  Table [patient].[tbl_OTCharges]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_OTCharges]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_OTCharges]
-GO
-/****** Object:  Table [patient].[tbl_MorePatients]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_MorePatients]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_MorePatients]
-GO
-/****** Object:  Table [patient].[tbl_LastName]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_LastName]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_LastName]
-GO
-/****** Object:  Table [patient].[tbl_Landmark]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_Landmark]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_Landmark]
-GO
-/****** Object:  Table [patient].[tbl_IndoorRoundRecords]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_IndoorRoundRecords]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_IndoorRoundRecords]
-GO
-/****** Object:  Table [patient].[tbl_husbandName]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_husbandName]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_husbandName]
-GO
-/****** Object:  Table [patient].[tbl_district]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_district]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_district]
-GO
-/****** Object:  Table [patient].[tbl_DischargeCardMedicines]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_DischargeCardMedicines]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_DischargeCardMedicines]
-GO
-/****** Object:  Table [patient].[tbl_DischargeCardGroup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[patient].[tbl_DischargeCardGroup]') AND type in (N'U'))
-DROP TABLE [patient].[tbl_DischargeCardGroup]
-GO
-/****** Object:  Table [location].[tblVillageCity_28102024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblVillageCity_28102024]') AND type in (N'U'))
-DROP TABLE [location].[tblVillageCity_28102024]
-GO
-/****** Object:  Table [location].[tblVillageCity]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblVillageCity]') AND type in (N'U'))
-DROP TABLE [location].[tblVillageCity]
-GO
-/****** Object:  Table [location].[tblTaluka_bkp_11052025]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblTaluka_bkp_11052025]') AND type in (N'U'))
-DROP TABLE [location].[tblTaluka_bkp_11052025]
-GO
-/****** Object:  Table [location].[tblTaluka_28102024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblTaluka_28102024]') AND type in (N'U'))
-DROP TABLE [location].[tblTaluka_28102024]
-GO
-/****** Object:  Table [location].[tblTaluka]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblTaluka]') AND type in (N'U'))
-DROP TABLE [location].[tblTaluka]
-GO
-/****** Object:  Table [location].[tblState_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblState_bkp]') AND type in (N'U'))
-DROP TABLE [location].[tblState_bkp]
-GO
-/****** Object:  Table [location].[tblState]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblState]') AND type in (N'U'))
-DROP TABLE [location].[tblState]
-GO
-/****** Object:  Table [location].[tblSociety_1]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblSociety_1]') AND type in (N'U'))
-DROP TABLE [location].[tblSociety_1]
-GO
-/****** Object:  Table [location].[tblSociety]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblSociety]') AND type in (N'U'))
-DROP TABLE [location].[tblSociety]
-GO
-/****** Object:  Table [location].[tblPincodeLocations]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblPincodeLocations]') AND type in (N'U'))
-DROP TABLE [location].[tblPincodeLocations]
-GO
-/****** Object:  Table [location].[tblDistrict_backup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblDistrict_backup]') AND type in (N'U'))
-DROP TABLE [location].[tblDistrict_backup]
-GO
-/****** Object:  Table [location].[tblDistrict_28102024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblDistrict_28102024]') AND type in (N'U'))
-DROP TABLE [location].[tblDistrict_28102024]
-GO
-/****** Object:  Table [location].[tblDistrict]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblDistrict]') AND type in (N'U'))
-DROP TABLE [location].[tblDistrict]
-GO
-/****** Object:  Table [location].[TblCity_1]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[TblCity_1]') AND type in (N'U'))
-DROP TABLE [location].[TblCity_1]
-GO
-/****** Object:  Table [location].[TblCity]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[TblCity]') AND type in (N'U'))
-DROP TABLE [location].[TblCity]
-GO
-/****** Object:  Table [location].[tblArea_1]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblArea_1]') AND type in (N'U'))
-DROP TABLE [location].[tblArea_1]
-GO
-/****** Object:  Table [location].[tblArea]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[location].[tblArea]') AND type in (N'U'))
-DROP TABLE [location].[tblArea]
-GO
-/****** Object:  Table [hospital].[tblUserLogin]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblUserLogin]') AND type in (N'U'))
-DROP TABLE [hospital].[tblUserLogin]
-GO
-/****** Object:  Table [hospital].[tblReportHeader_BKP]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblReportHeader_BKP]') AND type in (N'U'))
-DROP TABLE [hospital].[tblReportHeader_BKP]
-GO
-/****** Object:  Table [hospital].[tblReportHeader]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblReportHeader]') AND type in (N'U'))
-DROP TABLE [hospital].[tblReportHeader]
-GO
-/****** Object:  Table [hospital].[tblMedicine_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblMedicine_bkp]') AND type in (N'U'))
-DROP TABLE [hospital].[tblMedicine_bkp]
-GO
-/****** Object:  Table [hospital].[tblMedicine]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblMedicine]') AND type in (N'U'))
-DROP TABLE [hospital].[tblMedicine]
-GO
-/****** Object:  Table [hospital].[tblItems]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblItems]') AND type in (N'U'))
-DROP TABLE [hospital].[tblItems]
-GO
-/****** Object:  Table [hospital].[tblHospitalUsers]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblHospitalUsers]') AND type in (N'U'))
-DROP TABLE [hospital].[tblHospitalUsers]
-GO
-/****** Object:  Table [hospital].[tblHospitalContacts]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblHospitalContacts]') AND type in (N'U'))
-DROP TABLE [hospital].[tblHospitalContacts]
-GO
-/****** Object:  Table [hospital].[tblHospital]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblHospital]') AND type in (N'U'))
-DROP TABLE [hospital].[tblHospital]
-GO
-/****** Object:  Table [hospital].[tblDiagnosis_11022025]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblDiagnosis_11022025]') AND type in (N'U'))
-DROP TABLE [hospital].[tblDiagnosis_11022025]
-GO
-/****** Object:  Table [hospital].[tblDiagnosis]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblDiagnosis]') AND type in (N'U'))
-DROP TABLE [hospital].[tblDiagnosis]
-GO
-/****** Object:  Table [hospital].[tblAdvice]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tblAdvice]') AND type in (N'U'))
-DROP TABLE [hospital].[tblAdvice]
-GO
-/****** Object:  Table [hospital].[tbl_UserVerification]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tbl_UserVerification]') AND type in (N'U'))
-DROP TABLE [hospital].[tbl_UserVerification]
-GO
-/****** Object:  Table [hospital].[tbl_UserTemplateSettings]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tbl_UserTemplateSettings]') AND type in (N'U'))
-DROP TABLE [hospital].[tbl_UserTemplateSettings]
-GO
-/****** Object:  Table [hospital].[tbl_UserSettings]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tbl_UserSettings]') AND type in (N'U'))
-DROP TABLE [hospital].[tbl_UserSettings]
-GO
-/****** Object:  Table [hospital].[tbl_reportHeaderImages]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[hospital].[tbl_reportHeaderImages]') AND type in (N'U'))
-DROP TABLE [hospital].[tbl_reportHeaderImages]
-GO
-/****** Object:  Table [dbo].[tblVillageCityBkup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblVillageCityBkup]') AND type in (N'U'))
-DROP TABLE [dbo].[tblVillageCityBkup]
-GO
-/****** Object:  Table [dbo].[tblTalukaBkup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblTalukaBkup]') AND type in (N'U'))
-DROP TABLE [dbo].[tblTalukaBkup]
-GO
-/****** Object:  Table [dbo].[tblStateBkup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblStateBkup]') AND type in (N'U'))
-DROP TABLE [dbo].[tblStateBkup]
-GO
-/****** Object:  Table [dbo].[tblPincodeLocations_Master]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblPincodeLocations_Master]') AND type in (N'U'))
-DROP TABLE [dbo].[tblPincodeLocations_Master]
-GO
-/****** Object:  Table [dbo].[tblOpdRecord]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblOpdRecord]') AND type in (N'U'))
-DROP TABLE [dbo].[tblOpdRecord]
-GO
-/****** Object:  Table [dbo].[tblDistrictBkup]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblDistrictBkup]') AND type in (N'U'))
-DROP TABLE [dbo].[tblDistrictBkup]
-GO
-/****** Object:  Table [dbo].[tblBillItem]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tblBillItem]') AND type in (N'U'))
-DROP TABLE [dbo].[tblBillItem]
-GO
-/****** Object:  Table [dbo].[tbl_testingSCript]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tbl_testingSCript]') AND type in (N'U'))
-DROP TABLE [dbo].[tbl_testingSCript]
-GO
-/****** Object:  Table [dbo].[tbl_status_Execution]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tbl_status_Execution]') AND type in (N'U'))
-DROP TABLE [dbo].[tbl_status_Execution]
-GO
-/****** Object:  Table [dbo].[tbl_BackupSceduleLog]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[tbl_BackupSceduleLog]') AND type in (N'U'))
-DROP TABLE [dbo].[tbl_BackupSceduleLog]
-GO
-/****** Object:  Table [dbo].[SqlErrorLog]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SqlErrorLog]') AND type in (N'U'))
-DROP TABLE [dbo].[SqlErrorLog]
-GO
-/****** Object:  Table [dbo].[all_india_PO_list_without_APS_offices_ver2_lat_long]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[all_india_PO_list_without_APS_offices_ver2_lat_long]') AND type in (N'U'))
-DROP TABLE [dbo].[all_india_PO_list_without_APS_offices_ver2_lat_long]
-GO
-/****** Object:  Table [common].[tblGroups]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblGroups]') AND type in (N'U'))
-DROP TABLE [common].[tblGroups]
-GO
-/****** Object:  Table [common].[tblEntityRecords_BKP_24_11_2024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblEntityRecords_BKP_24_11_2024]') AND type in (N'U'))
-DROP TABLE [common].[tblEntityRecords_BKP_24_11_2024]
-GO
-/****** Object:  Table [common].[tblEntityRecords_13032025]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblEntityRecords_13032025]') AND type in (N'U'))
-DROP TABLE [common].[tblEntityRecords_13032025]
-GO
-/****** Object:  Table [common].[tblEntityRecords]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblEntityRecords]') AND type in (N'U'))
-DROP TABLE [common].[tblEntityRecords]
-GO
-/****** Object:  Table [common].[tblEntityMaster]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblEntityMaster]') AND type in (N'U'))
-DROP TABLE [common].[tblEntityMaster]
-GO
-/****** Object:  Table [common].[tblAppModules]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblAppModules]') AND type in (N'U'))
-DROP TABLE [common].[tblAppModules]
-GO
-/****** Object:  Table [common].[tblAppModuleRights]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tblAppModuleRights]') AND type in (N'U'))
-DROP TABLE [common].[tblAppModuleRights]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_UserSettingConfiguration_bkp]') AND type in (N'U'))
-DROP TABLE [common].[tbl_UserSettingConfiguration_bkp]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration_14_12_2024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_UserSettingConfiguration_14_12_2024]') AND type in (N'U'))
-DROP TABLE [common].[tbl_UserSettingConfiguration_14_12_2024]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_UserSettingConfiguration]') AND type in (N'U'))
-DROP TABLE [common].[tbl_UserSettingConfiguration]
-GO
-/****** Object:  Table [common].[tbl_SettingModules]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_SettingModules]') AND type in (N'U'))
-DROP TABLE [common].[tbl_SettingModules]
-GO
-/****** Object:  Table [common].[tbl_SettingModuleDetails]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_SettingModuleDetails]') AND type in (N'U'))
-DROP TABLE [common].[tbl_SettingModuleDetails]
-GO
-/****** Object:  Table [common].[tbl_ModuleFields_21012024]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_ModuleFields_21012024]') AND type in (N'U'))
-DROP TABLE [common].[tbl_ModuleFields_21012024]
-GO
-/****** Object:  Table [common].[tbl_ModuleFields]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_ModuleFields]') AND type in (N'U'))
-DROP TABLE [common].[tbl_ModuleFields]
-GO
-/****** Object:  Table [common].[settingsMapping]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[settingsMapping]') AND type in (N'U'))
-DROP TABLE [common].[settingsMapping]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementMaster_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[appadvertise].[tbl_AdvertisementMaster_bkp]') AND type in (N'U'))
-DROP TABLE [appadvertise].[tbl_AdvertisementMaster_bkp]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementMaster]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[appadvertise].[tbl_AdvertisementMaster]') AND type in (N'U'))
-DROP TABLE [appadvertise].[tbl_AdvertisementMaster]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementDetail_bkp]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[appadvertise].[tbl_AdvertisementDetail_bkp]') AND type in (N'U'))
-DROP TABLE [appadvertise].[tbl_AdvertisementDetail_bkp]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementDetail]    Script Date: 13-02-2026 09:30:13 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[appadvertise].[tbl_AdvertisementDetail]') AND type in (N'U'))
-DROP TABLE [appadvertise].[tbl_AdvertisementDetail]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementDetail]    Script Date: 13-02-2026 09:30:13 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [appadvertise].[tbl_AdvertisementDetail](
-	[DetailId] [int] IDENTITY(1,1) NOT NULL,
-	[AdId] [int] NOT NULL,
-	[MediaType] [nvarchar](50) NOT NULL,
-	[MediaUrl] [nvarchar](1000) NULL,
-	[MediaContent] [nvarchar](max) NULL,
-	[SortOrder] [int] NOT NULL,
-	[PlaceMent] [nvarchar](100) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[DetailId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementDetail_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [appadvertise].[tbl_AdvertisementDetail_bkp](
-	[DetailId] [int] IDENTITY(1,1) NOT NULL,
-	[AdId] [int] NOT NULL,
-	[MediaType] [nvarchar](50) NOT NULL,
-	[MediaUrl] [nvarchar](1000) NULL,
-	[MediaContent] [nvarchar](max) NULL,
-	[SortOrder] [int] NOT NULL,
-	[PlaceMent] [nvarchar](100) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementMaster]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [appadvertise].[tbl_AdvertisementMaster](
-	[AdId] [bigint] IDENTITY(1,1) NOT NULL,
-	[AdType] [nvarchar](50) NOT NULL,
-	[Headline] [nvarchar](255) NOT NULL,
-	[Description] [nvarchar](max) NULL,
-	[TargetUrl] [nvarchar](1000) NULL,
-	[StartDate] [datetime] NOT NULL,
-	[ExpireDate] [datetime] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[CreatedOn] [datetime] NOT NULL,
-	[UpdatedOn] [datetime] NULL,
-	[LastSyncDate] [datetime] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[AdId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [appadvertise].[tbl_AdvertisementMaster_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [appadvertise].[tbl_AdvertisementMaster_bkp](
-	[AdId] [bigint] IDENTITY(1,1) NOT NULL,
-	[AdType] [nvarchar](50) NOT NULL,
-	[Headline] [nvarchar](255) NOT NULL,
-	[Description] [nvarchar](max) NULL,
-	[TargetUrl] [nvarchar](1000) NULL,
-	[StartDate] [datetime] NOT NULL,
-	[ExpireDate] [datetime] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[CreatedOn] [datetime] NOT NULL,
-	[UpdatedOn] [datetime] NULL,
-	[LastSyncDate] [datetime] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [common].[settingsMapping]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[settingsMapping](
-	[mappingId] [int] IDENTITY(1,1) NOT NULL,
-	[userId] [int] NOT NULL,
-	[moduleId] [int] NOT NULL,
-	[fieldId] [int] NOT NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[mappingId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_ModuleFields]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_ModuleFields](
-	[fieldId] [bigint] IDENTITY(1,1) NOT NULL,
-	[ModuleId] [bigint] NULL,
-	[ModuleName] [nvarchar](400) NULL,
-	[FieldLabelName] [nvarchar](200) NULL,
-	[FieldName] [nvarchar](200) NULL,
-	[Type] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[isActive] [bit] NULL,
-	[updatedOn] [datetime] NULL,
-	[ModuleFormId] [nvarchar](200) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[fieldId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_ModuleFields_21012024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_ModuleFields_21012024](
-	[fieldId] [bigint] IDENTITY(1,1) NOT NULL,
-	[ModuleId] [bigint] NULL,
-	[ModuleName] [nvarchar](400) NULL,
-	[FieldLabelName] [nvarchar](200) NULL,
-	[FieldName] [nvarchar](200) NULL,
-	[Type] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[isActive] [bit] NULL,
-	[updatedOn] [datetime] NULL,
-	[ModuleFormId] [nvarchar](200) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_SettingModuleDetails]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_SettingModuleDetails](
-	[fieldId] [bigint] IDENTITY(1,1) NOT NULL,
-	[settingModuleId] [bigint] NULL,
-	[Fields] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_SettingModules]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_SettingModules](
-	[settingModuleId] [bigint] IDENTITY(1,1) NOT NULL,
-	[settingModules] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL,
-	[ModuleFormId] [nvarchar](200) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_UserSettingConfiguration](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[userId] [bigint] NULL,
-	[userCode] [nvarchar](200) NULL,
-	[module] [nvarchar](200) NULL,
-	[fieldName] [nvarchar](200) NULL,
-	[defaultValue] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL,
-	[tabIndex] [int] NULL,
-	[emptyText] [nvarchar](400) NULL,
-	[setting] [nvarchar](100) NULL,
-	[inputType] [nvarchar](100) NULL,
-	[isValid] [bit] NULL,
-	[HospitalId] [bigint] NULL,
-	[ModuleFormId] [nvarchar](200) NULL,
-	[Visited] [bit] NULL,
-	[VisitedTabIndex] [int] NULL,
-	[cStatus] [bit] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration_14_12_2024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_UserSettingConfiguration_14_12_2024](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[userId] [bigint] NULL,
-	[userCode] [nvarchar](200) NULL,
-	[module] [nvarchar](200) NULL,
-	[fieldName] [nvarchar](200) NULL,
-	[defaultValue] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL,
-	[tabIndex] [int] NULL,
-	[emptyText] [nvarchar](400) NULL,
-	[setting] [nvarchar](100) NULL,
-	[inputType] [nvarchar](100) NULL,
-	[isValid] [bit] NULL,
-	[HospitalId] [bigint] NULL,
-	[ModuleFormId] [nvarchar](200) NULL,
-	[Visited] [bit] NULL,
-	[VisitedTabIndex] [int] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tbl_UserSettingConfiguration_bkp](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[userId] [bigint] NULL,
-	[userCode] [nvarchar](200) NULL,
-	[module] [nvarchar](200) NULL,
-	[fieldName] [nvarchar](200) NULL,
-	[defaultValue] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL,
-	[tabIndex] [int] NULL,
-	[emptyText] [nvarchar](400) NULL,
-	[setting] [nvarchar](100) NULL,
-	[inputType] [nvarchar](100) NULL,
-	[isValid] [bit] NULL,
-	[HospitalId] [bigint] NULL,
-	[ModuleFormId] [nvarchar](200) NULL,
-	[Visited] [bit] NULL,
-	[VisitedTabIndex] [int] NULL,
-	[cStatus] [bit] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblAppModuleRights]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblAppModuleRights](
-	[RightId] [int] IDENTITY(1,1) NOT NULL,
-	[ModuleId] [int] NOT NULL,
-	[RightName] [nvarchar](100) NOT NULL,
-	[IsRightActive] [bit] NOT NULL,
-	[IsAdminRight] [bit] NOT NULL,
-	[EntryDate] [date] NOT NULL,
-	[UpdatedDate] [date] NOT NULL,
- CONSTRAINT [PK_tblAppModuleRights] PRIMARY KEY CLUSTERED 
-(
-	[RightId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblAppModules]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblAppModules](
-	[ModuleId] [int] IDENTITY(1,1) NOT NULL,
-	[ModuleName] [nvarchar](50) NOT NULL,
- CONSTRAINT [PK_tblAppModules] PRIMARY KEY CLUSTERED 
-(
-	[ModuleId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblEntityMaster]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblEntityMaster](
-	[EntityID] [int] IDENTITY(1,1) NOT NULL,
-	[EntityName] [nvarchar](200) NOT NULL,
-	[Description] [nvarchar](4000) NULL,
-	[IsPublic] [bit] NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
- CONSTRAINT [PK_tblEntityMaster] PRIMARY KEY CLUSTERED 
-(
-	[EntityID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblEntityRecords]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblEntityRecords](
-	[EntityRecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[EntityId] [int] NOT NULL,
-	[Language] [nvarchar](50) NULL,
-	[RecordName] [nvarchar](2000) NOT NULL,
-	[SequenceNo] [int] NULL,
-	[Remarks] [nvarchar](4000) NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblEntityRecords] PRIMARY KEY CLUSTERED 
-(
-	[EntityRecordId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblEntityRecords_13032025]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblEntityRecords_13032025](
-	[EntityRecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[EntityId] [int] NOT NULL,
-	[Language] [nvarchar](50) NULL,
-	[RecordName] [nvarchar](2000) NOT NULL,
-	[SequenceNo] [int] NULL,
-	[Remarks] [nvarchar](4000) NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblEntityRecords_BKP_24_11_2024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblEntityRecords_BKP_24_11_2024](
-	[EntityRecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[EntityId] [int] NOT NULL,
-	[Language] [nvarchar](50) NULL,
-	[RecordName] [nvarchar](2000) NOT NULL,
-	[SequenceNo] [int] NULL,
-	[Remarks] [nvarchar](4000) NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [common].[tblGroups]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [common].[tblGroups](
-	[GroupId] [int] IDENTITY(1,1) NOT NULL,
-	[GroupTypeId] [bigint] NOT NULL,
-	[GroupName] [nvarchar](500) NOT NULL,
-	[GroupItems] [nvarchar](4000) NOT NULL,
-	[IsGroupActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[SerializeData] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblGroups] PRIMARY KEY CLUSTERED 
-(
-	[GroupId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[all_india_PO_list_without_APS_offices_ver2_lat_long]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[all_india_PO_list_without_APS_offices_ver2_lat_long](
-	[officename] [varchar](50) NULL,
-	[pincode] [varchar](50) NULL,
-	[officeType] [varchar](50) NULL,
-	[Deliverystatus] [varchar](50) NULL,
-	[divisionname] [varchar](50) NULL,
-	[regionname] [varchar](50) NULL,
-	[circlename] [varchar](50) NULL,
-	[Taluk] [varchar](50) NULL,
-	[Districtname] [varchar](50) NULL,
-	[statename] [varchar](50) NULL,
-	[Telephone] [varchar](50) NULL,
-	[Related Suboffice] [varchar](50) NULL,
-	[Related Headoffice] [varchar](50) NULL,
-	[longitude] [varchar](50) NULL,
-	[latitude] [varchar](50) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[SqlErrorLog]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SqlErrorLog](
-	[ErrorLogId] [bigint] IDENTITY(1,1) NOT NULL,
-	[ErrorNumber] [int] NULL,
-	[ErrorSeverity] [int] NULL,
-	[ErrorState] [int] NULL,
-	[ErrorProcedure] [nvarchar](200) NULL,
-	[ErrorLine] [int] NULL,
-	[ErrorMessage] [nvarchar](max) NULL,
-	[ErrorDate] [datetime] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[ErrorLogId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tbl_BackupSceduleLog]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tbl_BackupSceduleLog](
-	[logid] [bigint] IDENTITY(1,1) NOT NULL,
-	[BackupName] [nvarchar](500) NULL,
-	[BackupPath] [nvarchar](500) NULL,
-	[BackupTime] [datetime] NULL,
-	[IsSuccess] [int] NULL,
-	[Cstaus] [bit] NULL,
-	[CreateTime] [datetime] NULL,
-	[UpdateTime] [datetime] NULL,
-	[CreateBy] [nvarchar](200) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[logid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tbl_status_Execution]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tbl_status_Execution](
-	[Status] [varchar](50) NULL,
-	[EntryDate] [datetime] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tbl_testingSCript]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tbl_testingSCript](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](max) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblBillItem]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblBillItem](
-	[BillId] [bigint] NOT NULL,
-	[ItemName] [nvarchar](200) NOT NULL,
-	[ItemRate] [money] NOT NULL,
-	[RateCriteria] [nvarchar](200) NULL,
-	[ItemQuantity] [int] NOT NULL,
-	[Amount] [money] NOT NULL,
-	[IsItemActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[CreatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblDistrictBkup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblDistrictBkup](
-	[DistrictId] [int] IDENTITY(1,1) NOT NULL,
-	[District] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[StateId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblOpdRecord]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblOpdRecord](
-	[RecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[FirstName] [varchar](50) NOT NULL,
-	[MiddleName] [varchar](50) NULL,
-	[LastName] [varchar](50) NULL,
-	[MobileNo] [varchar](20) NULL,
-	[Location] [varchar](50) NOT NULL,
-	[OpdDateTime] [datetime] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
- CONSTRAINT [PK_tblOpdRecord] PRIMARY KEY CLUSTERED 
-(
-	[RecordId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblPincodeLocations_Master]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblPincodeLocations_Master](
-	[LocationId] [int] IDENTITY(1,1) NOT NULL,
-	[Location] [varchar](50) NOT NULL,
-	[OfficeName] [varchar](50) NOT NULL,
-	[Pincode] [varchar](50) NOT NULL,
-	[OfficeType] [varchar](50) NOT NULL,
-	[Deliverystatus] [varchar](50) NOT NULL,
-	[Taluka] [varchar](50) NOT NULL,
-	[District] [varchar](50) NOT NULL,
-	[State] [varchar](50) NOT NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblStateBkup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblStateBkup](
-	[StateId] [int] IDENTITY(1,1) NOT NULL,
-	[State] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblTalukaBkup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblTalukaBkup](
-	[TalukaId] [int] IDENTITY(1,1) NOT NULL,
-	[Taluka] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[DistrictId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[tblVillageCityBkup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[tblVillageCityBkup](
-	[VillageCityId] [int] IDENTITY(1,1) NOT NULL,
-	[VillageCity] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[TalukaId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tbl_reportHeaderImages]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tbl_reportHeaderImages](
-	[headerImageId] [bigint] IDENTITY(1,1) NOT NULL,
-	[TypeImage] [nvarchar](20) NULL,
-	[DoctorImage] [text] NULL,
-	[ObgyImage] [text] NULL,
-	[Logo] [text] NULL,
-	[PlusImage] [text] NULL,
-	[CreatedOn] [datetime] NULL,
-	[cStatus] [int] NULL,
-	[tempid] [bigint] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tbl_UserSettings]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tbl_UserSettings](
-	[settingId] [bigint] IDENTITY(1,1) NOT NULL,
-	[userId] [bigint] NULL,
-	[userCode] [nvarchar](200) NULL,
-	[Setting] [nvarchar](200) NULL,
-	[description] [nvarchar](max) NULL,
-	[TabConfigFields] [nvarchar](max) NULL,
-	[defaultValue] [nvarchar](200) NULL,
-	[isActive] [bit] NULL,
-	[createdOn] [datetime] NULL,
-	[updatedOn] [datetime] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tbl_UserTemplateSettings]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tbl_UserTemplateSettings](
-	[TempSettingId] [bigint] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [bigint] NULL,
-	[UserId] [bigint] NULL,
-	[UserCode] [nvarchar](max) NULL,
-	[FontFamily] [nvarchar](max) NULL,
-	[BGColour] [nvarchar](max) NULL,
-	[CreatedOn] [datetime] NULL,
-	[UpdateOn] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[HeaderImage] [text] NULL,
-	[IsTemplateSelect] [bit] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[TempSettingId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tbl_UserVerification]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tbl_UserVerification](
-	[VerificationId] [bigint] IDENTITY(1,1) NOT NULL,
-	[EMPId] [nvarchar](100) NULL,
-	[EmailId] [nvarchar](100) NULL,
-	[OTP] [nvarchar](max) NULL,
-	[CreatedOn] [datetime] NULL,
-	[UpdatedOn] [datetime] NULL,
-	[Userid] [bigint] NULL,
-	[UserCode] [nvarchar](200) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[VerificationId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblAdvice]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblAdvice](
-	[AdviceId] [int] IDENTITY(1,1) NOT NULL,
-	[Advice] [nvarchar](1000) NOT NULL,
-	[Detail] [nvarchar](4000) NOT NULL,
-	[IsAdviceActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblAdvice] PRIMARY KEY CLUSTERED 
-(
-	[AdviceId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblDiagnosis]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblDiagnosis](
-	[DiagnosisId] [int] IDENTITY(1,1) NOT NULL,
-	[DiagnosisName] [nvarchar](500) NOT NULL,
-	[MedicineIds] [varchar](2000) NULL,
-	[Advice] [nvarchar](2000) NULL,
-	[IsUterusWeek] [bit] NOT NULL,
-	[FollowUpDays] [int] NOT NULL,
-	[IsDiagnosisActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[MedicineId] [nvarchar](500) NULL,
- CONSTRAINT [PK_tblDiagnosis] PRIMARY KEY CLUSTERED 
-(
-	[DiagnosisId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblDiagnosis_11022025]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblDiagnosis_11022025](
-	[DiagnosisId] [int] IDENTITY(1,1) NOT NULL,
-	[DiagnosisName] [nvarchar](500) NOT NULL,
-	[MedicineIds] [varchar](2000) NULL,
-	[Advice] [nvarchar](2000) NULL,
-	[IsUterusWeek] [bit] NOT NULL,
-	[FollowUpDays] [int] NOT NULL,
-	[IsDiagnosisActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[MedicineId] [nvarchar](500) NULL,
-	[_testingColumn] [nvarchar](max) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblHospital]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblHospital](
-	[HospitalId] [int] IDENTITY(1,1) NOT NULL,
-	[HospitalName] [nvarchar](1000) NOT NULL,
-	[LocationId] [int] NOT NULL,
-	[Area] [nvarchar](100) NULL,
-	[Pincode] [nvarchar](50) NULL,
-	[Taluka] [nvarchar](100) NULL,
-	[District] [nvarchar](100) NULL,
-	[State] [nvarchar](100) NULL,
-	[LocationType] [nvarchar](50) NULL,
-	[HospitalTypeRefId] [bigint] NULL,
-	[HospitalTiming] [nvarchar](1000) NULL,
-	[HospitalFooterNote] [nvarchar](4000) NULL,
-	[HospitalLogo] [varchar](max) NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[HospitalMasterId] [bigint] NULL,
-	[Location] [nvarchar](500) NULL,
-	[HouseBuilding] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblHospital] PRIMARY KEY CLUSTERED 
-(
-	[HospitalId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblHospitalContacts]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblHospitalContacts](
-	[ContactId] [bigint] IDENTITY(1,1) NOT NULL,
-	[ContactEntityType] [int] NOT NULL,
-	[ContactEntityRefId] [bigint] NOT NULL,
-	[Phone] [nvarchar](100) NULL,
-	[LandLine] [nvarchar](100) NULL,
-	[FaxNo] [nvarchar](100) NULL,
-	[EmailAddress] [varchar](100) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[hospitalId] [bigint] NULL,
-	[HospitalMasterId] [bigint] NULL,
- CONSTRAINT [PK_tblHospitalContacts] PRIMARY KEY CLUSTERED 
-(
-	[ContactId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblHospitalUsers]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblHospitalUsers](
-	[UserId] [bigint] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[FirstName] [nvarchar](100) NOT NULL,
-	[MiddleName] [nvarchar](100) NULL,
-	[LastName] [nvarchar](100) NOT NULL,
-	[UserTypeId] [bigint] NOT NULL,
-	[DepartmentId] [bigint] NOT NULL,
-	[DesignationId] [bigint] NOT NULL,
-	[UserCode] [nvarchar](100) NULL,
-	[LocationId] [int] NOT NULL,
-	[Area] [nvarchar](100) NULL,
-	[Taluka] [nvarchar](100) NULL,
-	[District] [nvarchar](100) NULL,
-	[State] [nvarchar](100) NULL,
-	[Pincode] [nvarchar](50) NULL,
-	[AadhaarNo] [nvarchar](50) NULL,
-	[RegistrationNo] [nvarchar](100) NULL,
-	[UsgRegNo] [nvarchar](100) NULL,
-	[DocSequenceNo] [int] NULL,
-	[EduDegree] [nvarchar](100) NULL,
-	[EduSpeciality] [nvarchar](100) NULL,
-	[EmployeeTypeId] [bigint] NULL,
-	[Password] [nvarchar](50) NULL,
-	[LoginAccessTypeId] [bigint] NULL,
-	[UserRights] [varchar](500) NULL,
-	[IsUserActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[FontFamilyId] [bigint] NULL,
-	[AditionalRegistrationNo] [nvarchar](100) NULL,
-	[Location] [nvarchar](500) NULL,
-	[HouseBuilding] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblHospitalUsers] PRIMARY KEY CLUSTERED 
-(
-	[UserId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblItems]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblItems](
-	[ItemId] [bigint] IDENTITY(1,1) NOT NULL,
-	[ItemName] [nvarchar](500) NOT NULL,
-	[Price] [money] NOT NULL,
-	[BatchNumber] [nvarchar](100) NULL,
-	[ManufacturingDate] [datetime] NULL,
-	[ManufacturingMonth] [int] NULL,
-	[ManufacturingYear] [int] NULL,
-	[ExpiryDate] [datetime] NULL,
-	[ExpiryMonth] [int] NULL,
-	[ExpiryYear] [int] NULL,
-	[IsItemActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[MfgMonth] [nvarchar](50) NULL,
-	[ExpMonth] [nvarchar](50) NULL,
-	[ManufacturingBy] [nvarchar](max) NULL,
-	[Weeks] [nvarchar](100) NULL,
- CONSTRAINT [PK_tblItems] PRIMARY KEY CLUSTERED 
-(
-	[ItemId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblMedicine]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblMedicine](
-	[MedicineId] [int] IDENTITY(1,1) NOT NULL,
-	[MedicineName] [nvarchar](500) NOT NULL,
-	[MedicineTypeId] [bigint] NOT NULL,
-	[MainContent] [nvarchar](1000) NOT NULL,
-	[Company] [nvarchar](500) NOT NULL,
-	[MorningMedTimeRefId] [bigint] NULL,
-	[NoonMedTimeRefId] [bigint] NULL,
-	[EveningMedTimeRefId] [bigint] NULL,
-	[NightMedTimeRefId] [bigint] NULL,
-	[PrescriptionDays] [int] NOT NULL,
-	[IsMedicineActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[MorningMedTimeRef] [nvarchar](max) NULL,
-	[NoonMedTimeRef] [nvarchar](max) NULL,
-	[EveningMedTimeRef] [nvarchar](max) NULL,
-	[NightMedTimeRef] [nvarchar](max) NULL,
-	[MedicineType] [nvarchar](max) NULL,
-	[Remark] [nvarchar](max) NULL,
-	[IsSyncFromServer] [bit] NULL,
-	[LastSync] [datetime] NULL,
- CONSTRAINT [PK_tblMedicine] PRIMARY KEY CLUSTERED 
-(
-	[MedicineId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblMedicine_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblMedicine_bkp](
-	[MedicineId] [int] IDENTITY(1,1) NOT NULL,
-	[MedicineName] [nvarchar](500) NOT NULL,
-	[MedicineTypeId] [bigint] NOT NULL,
-	[MainContent] [nvarchar](1000) NOT NULL,
-	[Company] [nvarchar](500) NOT NULL,
-	[MorningMedTimeRefId] [bigint] NULL,
-	[NoonMedTimeRefId] [bigint] NULL,
-	[EveningMedTimeRefId] [bigint] NULL,
-	[NightMedTimeRefId] [bigint] NULL,
-	[PrescriptionDays] [int] NOT NULL,
-	[IsMedicineActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[MorningMedTimeRef] [nvarchar](max) NULL,
-	[NoonMedTimeRef] [nvarchar](max) NULL,
-	[EveningMedTimeRef] [nvarchar](max) NULL,
-	[NightMedTimeRef] [nvarchar](max) NULL,
-	[MedicineType] [nvarchar](max) NULL,
-	[Remark] [nvarchar](max) NULL,
-	[IsSyncFromServer] [bit] NULL,
-	[LastSync] [datetime] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblReportHeader]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblReportHeader](
-	[HeaderId] [int] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[TemplateTypeId] [bigint] NULL,
-	[TemplateHeader] [nvarchar](200) NOT NULL,
-	[HeaderText] [nvarchar](max) NOT NULL,
-	[LanguageCode] [nvarchar](50) NULL,
-	[IsTemplateActive] [bit] NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[HeaderImage] [nvarchar](max) NULL,
-	[IsHeaderSelect] [bit] NULL,
-	[FontFamily] [nvarchar](100) NULL,
-	[BGColour] [nvarchar](100) NULL,
-	[HeaderType] [nvarchar](100) NULL,
-	[LogoImage] [text] NULL,
-	[BGColourFullTemplate] [bit] NULL,
-	[FontFamilyFullTemplate] [bit] NULL,
-	[FontColour] [nvarchar](50) NULL,
-	[FontColourFullTemplate] [bit] NULL,
-	[HospitalLogo] [text] NULL,
-	[LogoId] [bigint] NULL,
-	[DoctorImageId] [bigint] NULL,
-	[ObgyImageId] [bigint] NULL,
-	[PlusImageId] [bigint] NULL,
- CONSTRAINT [PK_tblReportHeader] PRIMARY KEY CLUSTERED 
-(
-	[HeaderId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblReportHeader_BKP]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblReportHeader_BKP](
-	[HeaderId] [int] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[TemplateTypeId] [bigint] NULL,
-	[TemplateHeader] [nvarchar](200) NOT NULL,
-	[HeaderText] [nvarchar](max) NOT NULL,
-	[LanguageCode] [nvarchar](50) NULL,
-	[IsTemplateActive] [bit] NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[HeaderImage] [nvarchar](max) NULL,
-	[IsHeaderSelect] [bit] NULL,
-	[FontFamily] [nvarchar](100) NULL,
-	[BGColour] [nvarchar](100) NULL,
-	[HeaderType] [nvarchar](100) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [hospital].[tblUserLogin]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [hospital].[tblUserLogin](
-	[HospitalId] [int] NOT NULL,
-	[UserId] [bigint] NOT NULL,
-	[Password] [varchar](50) NOT NULL,
-	[LoginAccessStatus] [tinyint] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblArea]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblArea](
-	[AreaId] [bigint] IDENTITY(1,1) NOT NULL,
-	[Area] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[CityId] [bigint] NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[AreaId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblArea_1]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblArea_1](
-	[AreaId] [bigint] IDENTITY(1,1) NOT NULL,
-	[Area] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[CityId] [bigint] NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[TblCity]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[TblCity](
-	[CityId] [bigint] IDENTITY(1,1) NOT NULL,
-	[CityName] [nvarchar](500) NULL,
-	[Language] [nvarchar](100) NULL,
-	[StateId] [bigint] NULL,
-	[IsActive] [bit] NULL,
-	[IsEdit] [bit] NULL,
-	[EntryDate] [datetime] NULL,
-	[UpdateDate] [datetime] NULL,
-	[CreateBy] [bigint] NULL,
-	[UpdateBy] [bigint] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[CityId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[TblCity_1]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[TblCity_1](
-	[CityId] [bigint] IDENTITY(1,1) NOT NULL,
-	[CityName] [nvarchar](500) NULL,
-	[Language] [nvarchar](100) NULL,
-	[StateId] [bigint] NULL,
-	[IsActive] [bit] NULL,
-	[IsEdit] [bit] NULL,
-	[EntryDate] [datetime] NULL,
-	[UpdateDate] [datetime] NULL,
-	[CreateBy] [bigint] NULL,
-	[UpdateBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblDistrict]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblDistrict](
-	[DistrictId] [int] IDENTITY(1,1) NOT NULL,
-	[District] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[StateId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[City] [nvarchar](200) NULL,
-	[CityId] [bigint] NULL,
-	[IsDistrict] [bit] NULL,
- CONSTRAINT [PK_tblDistrict] PRIMARY KEY CLUSTERED 
-(
-	[DistrictId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblDistrict_28102024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblDistrict_28102024](
-	[DistrictId] [int] IDENTITY(1,1) NOT NULL,
-	[District] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[StateId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblDistrict_backup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblDistrict_backup](
-	[DistrictId] [int] IDENTITY(1,1) NOT NULL,
-	[District] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[StateId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblPincodeLocations]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblPincodeLocations](
-	[LocationId] [int] IDENTITY(1,1) NOT NULL,
-	[Location] [varchar](50) NOT NULL,
-	[OfficeName] [varchar](50) NOT NULL,
-	[Pincode] [varchar](50) NULL,
-	[OfficeType] [varchar](50) NOT NULL,
-	[Deliverystatus] [varchar](50) NOT NULL,
-	[Taluka] [varchar](50) NOT NULL,
-	[District] [varchar](50) NOT NULL,
-	[State] [varchar](50) NOT NULL,
- CONSTRAINT [PK_tblPincodeLocations] PRIMARY KEY CLUSTERED 
-(
-	[LocationId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblSociety]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblSociety](
-	[SocietyId] [bigint] IDENTITY(1,1) NOT NULL,
-	[Society] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[AreaId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[SocietyId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblSociety_1]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblSociety_1](
-	[SocietyId] [bigint] IDENTITY(1,1) NOT NULL,
-	[Society] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[AreaId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblState]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblState](
-	[StateId] [int] IDENTITY(1,1) NOT NULL,
-	[State] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblState] PRIMARY KEY CLUSTERED 
-(
-	[StateId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblState_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblState_bkp](
-	[StateId] [int] IDENTITY(1,1) NOT NULL,
-	[State] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblTaluka]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblTaluka](
-	[TalukaId] [int] IDENTITY(1,1) NOT NULL,
-	[Taluka] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[DistrictId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[Area] [nvarchar](200) NULL,
-	[CityId] [bigint] NULL,
-	[IsTaluka] [bit] NULL,
-	[AreaId] [bigint] NULL,
- CONSTRAINT [PK_tblTaluka] PRIMARY KEY CLUSTERED 
-(
-	[TalukaId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblTaluka_28102024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblTaluka_28102024](
-	[TalukaId] [int] IDENTITY(1,1) NOT NULL,
-	[Taluka] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[DistrictId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblTaluka_bkp_11052025]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblTaluka_bkp_11052025](
-	[TalukaId] [int] IDENTITY(1,1) NOT NULL,
-	[Taluka] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[DistrictId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblVillageCity]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblVillageCity](
-	[VillageCityId] [int] IDENTITY(1,1) NOT NULL,
-	[VillageCity] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[TalukaId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[taluka] [nvarchar](200) NULL,
-	[District] [nvarchar](200) NULL,
-	[State] [nvarchar](200) NULL,
-	[Area] [nvarchar](200) NULL,
-	[Society] [nvarchar](200) NULL,
-	[City] [nvarchar](max) NULL,
-	[SocietyId] [bigint] NULL,
-	[AreaId] [bigint] NULL,
-	[IsVillageCity] [bit] NULL,
- CONSTRAINT [PK_tblVillageCity] PRIMARY KEY CLUSTERED 
-(
-	[VillageCityId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [location].[tblVillageCity_28102024]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [location].[tblVillageCity_28102024](
-	[VillageCityId] [int] IDENTITY(1,1) NOT NULL,
-	[VillageCity] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[TalukaId] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_DischargeCardGroup]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_DischargeCardGroup](
-	[GroupId] [bigint] IDENTITY(1,1) NOT NULL,
-	[GroupName] [nvarchar](500) NULL,
-	[DischargeMedicineName] [nvarchar](max) NULL,
-	[DischargeMedicineIds] [nvarchar](500) NULL,
-	[Cstatus] [bit] NULL,
-	[IsEdited] [bit] NULL,
-	[CreatedOn] [datetime] NULL,
-	[CreatedBy] [int] NULL,
-	[UpdatedOn] [datetime] NULL,
-	[UpdatedBy] [int] NULL,
-	[Doses] [nvarchar](max) NULL,
-	[Remark] [nvarchar](max) NULL,
-	[PrescriptionGrid] [nvarchar](max) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[GroupId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_DischargeCardMedicines]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_DischargeCardMedicines](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[MedicineName] [nvarchar](max) NULL,
-	[Cstatus] [bit] NULL,
-	[CreatedOn] [datetime] NULL,
-	[UpdatedOn] [datetime] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_district]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_district](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[DistrictName] [nvarchar](400) NULL,
- CONSTRAINT [PK_tbl_district] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_husbandName]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_husbandName](
-	[hid] [bigint] IDENTITY(1,1) NOT NULL,
-	[HusbandName] [nvarchar](400) NULL,
-	[cstatus] [bit] NULL,
-	[createon] [datetime] NULL,
-	[langauge] [nvarchar](50) NULL,
-	[Language] [nvarchar](100) NULL,
- CONSTRAINT [PK_tbl_husbandName] PRIMARY KEY CLUSTERED 
-(
-	[hid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_IndoorRoundRecords]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_IndoorRoundRecords](
-	[WRoundId] [bigint] IDENTITY(1,1) NOT NULL,
-	[IndoorRecordId] [bigint] NULL,
-	[HospitalId] [bigint] NULL,
-	[PatientId] [bigint] NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NULL,
-	[IndoorDate] [date] NULL,
-	[IndoorTime] [time](7) NULL,
-	[TemperatureRefId] [int] NULL,
-	[Pulse] [int] NULL,
-	[SysBP] [int] NULL,
-	[DaisBP] [int] NULL,
-	[SPO2] [float] NULL,
-	[PallorRefId] [bigint] NULL,
-	[IcterusRefId] [bigint] NULL,
-	[OedemaRefId] [bigint] NULL,
-	[RS] [nvarchar](255) NULL,
-	[CVS] [nvarchar](255) NULL,
-	[UTWeeksRefId] [nvarchar](500) NULL,
-	[EBPPRefId] [nvarchar](500) NULL,
-	[FHSRefId] [bigint] NULL,
-	[UTContRefId] [nvarchar](max) NULL,
-	[PSRefId] [bigint] NULL,
-	[PVRefId] [bigint] NULL,
-	[PatientType] [int] NULL,
-	[OperativeType] [nvarchar](138) NULL,
-	[SrNo] [bigint] NULL,
-	[EntryDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedDate] [datetime] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[AdviceDetails] [nvarchar](max) NULL,
-	[AdviceGroup] [nvarchar](max) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[WRoundId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_Landmark]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_Landmark](
-	[lid] [bigint] IDENTITY(1,1) NOT NULL,
-	[Landmark] [nvarchar](200) NULL,
-	[langauge] [nvarchar](100) NULL,
-	[createdOn] [datetime] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_LastName]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_LastName](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[LastName] [nvarchar](400) NULL,
-	[cstatus] [bit] NULL,
-	[createOn] [datetime] NULL,
-	[langauge] [nvarchar](50) NULL,
-	[Language] [nvarchar](100) NULL,
- CONSTRAINT [PK_tbl_LastName] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_MorePatients]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_MorePatients](
-	[Pid] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NULL,
-	[P_Name] [nvarchar](max) NULL,
-	[P_LastName] [nvarchar](max) NULL,
-	[P_PrimaryRelativeName] [nvarchar](max) NULL,
-	[CreateOn] [datetime] NULL,
-	[CreatedBy] [int] NULL,
-	[UpdatedOn] [datetime] NULL,
-	[UpdatedBy] [int] NULL,
-	[language] [nvarchar](100) NULL,
- CONSTRAINT [PK_tbl_MorePatients] PRIMARY KEY CLUSTERED 
-(
-	[Pid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_OTCharges]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_OTCharges](
-	[OTCId] [bigint] IDENTITY(1,1) NOT NULL,
-	[billid] [bigint] NULL,
-	[hospitalid] [bigint] NULL,
-	[CaseId] [bigint] NULL,
-	[visitid] [bigint] NULL,
-	[patientId] [bigint] NULL,
-	[OTChargesName] [nvarchar](500) NULL,
-	[OTCharge] [decimal](18, 2) NULL,
-	[cStatus] [bit] NULL,
-	[CreatedOn] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedOn] [datetime] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_PatientName]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_PatientName](
-	[pid] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientName] [nvarchar](400) NULL,
-	[cstatus] [bit] NULL,
-	[createOn] [datetime] NULL,
-	[Langauge] [nvarchar](50) NULL,
-	[Language] [nvarchar](100) NULL,
- CONSTRAINT [PK_tbl_PatientName] PRIMARY KEY CLUSTERED 
-(
-	[pid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_PinCode]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_PinCode](
-	[pinid] [bigint] IDENTITY(1,1) NOT NULL,
-	[PinCode] [nvarchar](400) NULL,
- CONSTRAINT [PK_tbl_PinCode] PRIMARY KEY CLUSTERED 
-(
-	[pinid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_regiondetails]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_regiondetails](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[villagecity] [nvarchar](400) NULL,
-	[taluka] [nvarchar](400) NULL,
-	[district] [nvarchar](400) NULL,
-	[state] [nvarchar](400) NULL,
-	[pincode] [nvarchar](200) NULL,
-	[createdOn] [datetime] NULL,
-	[langauge] [nvarchar](50) NULL,
-	[Landmark] [nvarchar](200) NULL,
-	[Area] [nvarchar](200) NULL,
-	[Society] [nvarchar](200) NULL,
- CONSTRAINT [PK_tbl_regiondetails] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_state]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_state](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[StateName] [nvarchar](400) NULL,
- CONSTRAINT [PK_tbl_state] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_taluka]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_taluka](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TalukaName] [nvarchar](400) NULL,
- CONSTRAINT [PK_tbl_taluka] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_testing]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_testing](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](max) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tbl_Villagecity]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tbl_Villagecity](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[VillagecityName] [nvarchar](400) NULL,
- CONSTRAINT [PK_tbl_Villagecity] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblBill]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblBill](
-	[BillId] [bigint] IDENTITY(1,1) NOT NULL,
-	[BillNo] [nvarchar](100) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[AdmissionDate] [date] NOT NULL,
-	[DischargeDate] [date] NOT NULL,
-	[OTDate] [date] NULL,
-	[ChargeForRefId] [bigint] NOT NULL,
-	[DiagnosisRefId] [bigint] NOT NULL,
-	[ProcedureNameRefId] [bigint] NOT NULL,
-	[DocVisits] [int] NOT NULL,
-	[DocFeeRate] [money] NOT NULL,
-	[DocCharges] [money] NOT NULL,
-	[UsgNo] [int] NOT NULL,
-	[UsgFeeRate] [money] NOT NULL,
-	[UsgCharges] [money] NOT NULL,
-	[RoomTypeRefId] [bigint] NOT NULL,
-	[RoomRentDays] [int] NOT NULL,
-	[RoomFeeRate] [money] NOT NULL,
-	[RoomCharges] [money] NOT NULL,
-	[NursingDays] [int] NOT NULL,
-	[NursingFeeRate] [money] NOT NULL,
-	[NursingCharges] [money] NOT NULL,
-	[OTCharges] [money] NOT NULL,
-	[MedicineCharges] [money] NOT NULL,
-	[OtherChargeNameRefId] [bigint] NOT NULL,
-	[OtherCharges] [money] NOT NULL,
-	[TotalAmount] [money] NOT NULL,
-	[PaymentTypeRefId] [bigint] NOT NULL,
-	[IsBillActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[VisitId] [bigint] NULL,
-	[AllOTCharges] [nvarchar](max) NULL,
-	[Diagnosis] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblBill] PRIMARY KEY CLUSTERED 
-(
-	[BillId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblBillVoucher]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblBillVoucher](
-	[VoucherId] [bigint] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VoucherNo] [nvarchar](50) NULL,
-	[BillDate] [date] NOT NULL,
-	[VoucherTypeRefId] [bigint] NULL,
-	[Amount] [money] NOT NULL,
-	[VoucherItemDetails] [nvarchar](max) NULL,
-	[IsVoucherActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[VisitId] [bigint] NULL,
- CONSTRAINT [PK_tblBillVoucher] PRIMARY KEY CLUSTERED 
-(
-	[VoucherId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblDeliveryRecords](
-	[DeliveryId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NULL,
-	[LanguageCode] [nvarchar](50) NULL,
-	[SrNo] [int] NULL,
-	[SrNoAccMonth] [int] NULL,
-	[SrNoAccYear] [int] NULL,
-	[DeliveryNo] [nvarchar](20) NULL,
-	[DeliveryNoRefId] [bigint] NULL,
-	[BabyNo] [nvarchar](max) NULL,
-	[BabyNoRefId] [bigint] NULL,
-	[BirthDate] [date] NULL,
-	[BirthTime] [time](7) NULL,
-	[ChildName] [nvarchar](100) NULL,
-	[ChildGender] [nvarchar](max) NULL,
-	[ChildGenderRefId] [bigint] NULL,
-	[ChildWeight] [decimal](18, 2) NULL,
-	[BabyStatus] [nvarchar](max) NULL,
-	[BabyStatusRefId] [bigint] NULL,
-	[MotherFirstName] [nvarchar](max) NULL,
-	[MotherFNameSuffix] [nvarchar](20) NULL,
-	[MotherLastName] [nvarchar](max) NULL,
-	[PrimaryContactName] [nvarchar](max) NULL,
-	[PrimaryContactNameSuffix] [nvarchar](20) NULL,
-	[SecondaryContactName] [nvarchar](100) NULL,
-	[SecondaryContactNameSuffix] [nvarchar](20) NULL,
-	[PatientMobile] [nvarchar](50) NULL,
-	[DeliveryType] [nvarchar](max) NULL,
-	[DeliveryTypeId] [bigint] NULL,
-	[Religion] [nvarchar](max) NULL,
-	[ReligionId] [bigint] NULL,
-	[Nationality] [nvarchar](50) NULL,
-	[EpisioBy] [nvarchar](100) NULL,
-	[EpisioById] [bigint] NULL,
-	[Dayan] [nvarchar](100) NULL,
-	[DayanRefId] [bigint] NULL,
-	[LocationRefId] [int] NULL,
-	[Landmark] [nvarchar](100) NULL,
-	[Area] [nvarchar](200) NULL,
-	[VillageCity] [nvarchar](max) NULL,
-	[Taluka] [nvarchar](max) NULL,
-	[District] [nvarchar](max) NULL,
-	[State] [nvarchar](max) NULL,
-	[PinCode] [nvarchar](20) NULL,
-	[MarriageAge] [int] NULL,
-	[MothersCurrentAge] [int] NULL,
-	[PregWeeks] [int] NULL,
-	[LiveMaleFemale] [nvarchar](20) NULL,
-	[FathersEducation] [nvarchar](max) NULL,
-	[MothersEducation] [nvarchar](max) NULL,
-	[FathersOccupation] [nvarchar](max) NULL,
-	[MothersOccupation] [nvarchar](max) NULL,
-	[IsDelActive] [bit] NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[isMisMatchSrNos] [bit] NULL,
-	[Society] [nvarchar](1000) NULL,
-	[HouseNo] [nvarchar](1000) NULL,
-	[OE] [nvarchar](800) NULL,
-	[SE] [nvarchar](800) NULL,
-	[RS] [nvarchar](800) NULL,
-	[Complain] [nvarchar](800) NULL,
-	[Diagnosis] [nvarchar](800) NULL,
-	[AdmissionDate] [date] NULL,
-	[AdmissionTime] [time](7) NULL,
-	[DischargeDate] [date] NULL,
-	[DischargeTime] [time](7) NULL,
-	[Pulse] [bigint] NULL,
-	[ObstetricHistory] [nvarchar](800) NULL,
-	[PastHistory] [nvarchar](800) NULL,
-	[HB] [nvarchar](800) NULL,
-	[BG] [nvarchar](800) NULL,
-	[PerAbdomen] [nvarchar](800) NULL,
-	[PerVaginum] [nvarchar](800) NULL,
-	[AdharNumber] [nvarchar](500) NULL,
-	[EmailId] [nvarchar](500) NULL,
-	[PrescriptionGrid] [nvarchar](max) NULL,
-	[City] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblDeliveryRecords] PRIMARY KEY CLUSTERED 
-(
-	[DeliveryId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords_13032025]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblDeliveryRecords_13032025](
-	[DeliveryId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[LanguageCode] [nvarchar](50) NULL,
-	[SrNo] [int] NOT NULL,
-	[SrNoAccMonth] [int] NOT NULL,
-	[SrNoAccYear] [int] NOT NULL,
-	[DeliveryNo] [nvarchar](20) NULL,
-	[DeliveryNoRefId] [bigint] NOT NULL,
-	[BabyNo] [nvarchar](20) NOT NULL,
-	[BabyNoRefId] [bigint] NOT NULL,
-	[BirthDate] [date] NOT NULL,
-	[BirthTime] [time](7) NOT NULL,
-	[ChildName] [nvarchar](50) NOT NULL,
-	[ChildGender] [nvarchar](20) NOT NULL,
-	[ChildGenderRefId] [bigint] NOT NULL,
-	[ChildWeight] [decimal](5, 2) NOT NULL,
-	[BabyStatus] [nvarchar](20) NOT NULL,
-	[BabyStatusRefId] [bigint] NOT NULL,
-	[MotherFirstName] [nvarchar](50) NOT NULL,
-	[MotherFNameSuffix] [nvarchar](20) NULL,
-	[MotherLastName] [nvarchar](50) NOT NULL,
-	[PrimaryContactName] [nvarchar](50) NOT NULL,
-	[PrimaryContactNameSuffix] [nvarchar](20) NULL,
-	[SecondaryContactName] [nvarchar](50) NOT NULL,
-	[SecondaryContactNameSuffix] [nvarchar](20) NULL,
-	[PatientMobile] [nvarchar](50) NULL,
-	[DeliveryType] [nvarchar](20) NOT NULL,
-	[DeliveryTypeId] [bigint] NOT NULL,
-	[Religion] [nvarchar](20) NOT NULL,
-	[ReligionId] [bigint] NOT NULL,
-	[Nationality] [nvarchar](50) NULL,
-	[EpisioBy] [nvarchar](50) NOT NULL,
-	[EpisioById] [bigint] NOT NULL,
-	[Dayan] [nvarchar](50) NOT NULL,
-	[DayanRefId] [bigint] NOT NULL,
-	[LocationRefId] [int] NOT NULL,
-	[Landmark] [nvarchar](200) NOT NULL,
-	[Area] [nvarchar](200) NULL,
-	[VillageCity] [nvarchar](50) NOT NULL,
-	[Taluka] [nvarchar](50) NOT NULL,
-	[District] [nvarchar](50) NOT NULL,
-	[State] [nvarchar](50) NOT NULL,
-	[PinCode] [nvarchar](20) NULL,
-	[MarriageAge] [int] NOT NULL,
-	[MothersCurrentAge] [int] NOT NULL,
-	[PregWeeks] [int] NOT NULL,
-	[LiveMaleFemale] [nvarchar](20) NULL,
-	[FathersEducation] [nvarchar](50) NOT NULL,
-	[MothersEducation] [nvarchar](50) NOT NULL,
-	[FathersOccupation] [nvarchar](50) NOT NULL,
-	[MothersOccupation] [nvarchar](50) NOT NULL,
-	[IsDelActive] [bit] NOT NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[isMisMatchSrNos] [bit] NULL,
-	[Society] [nvarchar](1000) NULL,
-	[HouseNo] [nvarchar](1000) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblDeliveryRecords_otherlanguage]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblDeliveryRecords_otherlanguage](
-	[DeliveryOTLId] [bigint] IDENTITY(1,1) NOT NULL,
-	[DeliveryId] [bigint] NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[LangaugeCode] [nvarchar](50) NULL,
-	[CStatus] [bit] NULL,
-	[CreateOn] [datetime] NULL,
-	[CreateBy] [bigint] NULL,
-	[UpdatedOn] [datetime] NULL,
-	[UpdateBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblHistolap]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblHistolap](
-	[HistolapId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NOT NULL,
-	[AdmissionDate] [date] NOT NULL,
-	[AdmissionTime] [time](7) NOT NULL,
-	[ProcedureNameRefId] [bigint] NOT NULL,
-	[ProcedureDate] [date] NOT NULL,
-	[ProcedureTime] [time](7) NOT NULL,
-	[RightTubeRefId] [bigint] NOT NULL,
-	[LeftTubeRefId] [bigint] NOT NULL,
-	[UterusRefId] [bigint] NULL,
-	[PODRefId] [bigint] NULL,
-	[EndoCavityRefId] [bigint] NULL,
-	[CervicalCanalRefId] [bigint] NULL,
-	[DischargeDate] [date] NOT NULL,
-	[DischargeTime] [time](7) NOT NULL,
-	[HistolapRemark] [nvarchar](2000) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblHistolap] PRIMARY KEY CLUSTERED 
-(
-	[HistolapId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblIndoorRecords]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblIndoorRecords](
-	[IndoorRecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NOT NULL,
-	[AdmissionDate] [date] NULL,
-	[AdmissionTime] [time](7) NULL,
-	[IndoorCaseNo] [nvarchar](50) NULL,
-	[IndoorDate] [date] NULL,
-	[IndoorTime] [time](7) NULL,
-	[TemperatureRefId] [bigint] NULL,
-	[Pulse] [int] NULL,
-	[SysBP] [int] NULL,
-	[DaisBP] [int] NULL,
-	[SPO2] [float] NULL,
-	[PallorRefId] [bigint] NULL,
-	[IcterusRefId] [bigint] NULL,
-	[OedemaRefId] [bigint] NULL,
-	[RS] [nvarchar](50) NULL,
-	[CVS] [nvarchar](50) NULL,
-	[UTWeeksRefId] [bigint] NULL,
-	[EBPPRefId] [bigint] NULL,
-	[FHSRefId] [bigint] NULL,
-	[UTContRefId] [nchar](10) NULL,
-	[PSRefId] [bigint] NULL,
-	[PVRefId] [bigint] NULL,
-	[ProvisionalDiagnosisRefId] [bigint] NULL,
-	[OperationNameRefId] [bigint] NULL,
-	[OTDate] [date] NULL,
-	[OTTime] [time](7) NULL,
-	[DiagnosisRefId] [bigint] NULL,
-	[DischargeDate] [date] NULL,
-	[DischargeTime] [time](7) NULL,
-	[AdviceGroup] [nvarchar](max) NULL,
-	[AdviceDetails] [nvarchar](max) NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[Anesthetist] [nvarchar](500) NULL,
-	[Surgeon] [nvarchar](500) NULL,
-	[SrNo] [bigint] NULL,
-	[ProvisionalDiagnosis] [nvarchar](max) NULL,
-	[Diagnosis] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblIndoorRecords] PRIMARY KEY CLUSTERED 
-(
-	[IndoorRecordId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblIndoorRecords_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblIndoorRecords_bkp](
-	[IndoorRecordId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NOT NULL,
-	[AdmissionDate] [date] NOT NULL,
-	[AdmissionTime] [time](7) NOT NULL,
-	[IndoorCaseNo] [nvarchar](50) NOT NULL,
-	[IndoorDate] [date] NOT NULL,
-	[IndoorTime] [time](7) NOT NULL,
-	[TemperatureRefId] [bigint] NOT NULL,
-	[Pulse] [int] NOT NULL,
-	[SysBP] [int] NOT NULL,
-	[DaisBP] [int] NOT NULL,
-	[SPO2] [float] NULL,
-	[PallorRefId] [bigint] NOT NULL,
-	[IcterusRefId] [bigint] NOT NULL,
-	[OedemaRefId] [bigint] NOT NULL,
-	[RS] [nvarchar](50) NULL,
-	[CVS] [nvarchar](50) NULL,
-	[UTWeeksRefId] [bigint] NOT NULL,
-	[EBPPRefId] [bigint] NOT NULL,
-	[FHSRefId] [bigint] NOT NULL,
-	[UTContRefId] [nchar](10) NOT NULL,
-	[PSRefId] [bigint] NOT NULL,
-	[PVRefId] [bigint] NOT NULL,
-	[ProvisionalDiagnosisRefId] [bigint] NOT NULL,
-	[OperationNameRefId] [bigint] NOT NULL,
-	[OTDate] [date] NOT NULL,
-	[OTTime] [time](7) NOT NULL,
-	[DiagnosisRefId] [bigint] NOT NULL,
-	[DischargeDate] [date] NOT NULL,
-	[DischargeTime] [time](7) NOT NULL,
-	[AdviceGroup] [nvarchar](max) NULL,
-	[AdviceDetails] [nvarchar](max) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblInvestigation]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblInvestigation](
-	[InvestigationId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[HomeBloodGlucoseMonitoring] [nvarchar](100) NULL,
-	[BloodGroup] [nvarchar](100) NULL,
-	[UrineSugar] [nvarchar](100) NULL,
-	[UrineProtein] [nvarchar](100) NULL,
-	[HIV] [nvarchar](100) NULL,
-	[HepatitisBsurfaceAntigen] [nvarchar](100) NULL,
-	[ThyroidStimuatingHormone] [nvarchar](100) NULL,
-	[VenerealDiseaseResearchLaboratory] [nvarchar](100) NULL,
-	[Other] [nvarchar](100) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblInvestigation] PRIMARY KEY CLUSTERED 
-(
-	[InvestigationId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblMTP]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblMTP](
-	[MTPId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NOT NULL,
-	[SrNoAccMonth] [int] NULL,
-	[SrNoAccYear] [int] NULL,
-	[MtpUTWeeks] [int] NOT NULL,
-	[RMP2] [nvarchar](50) NULL,
-	[LiveMaleFemale] [nvarchar](50) NOT NULL,
-	[ReligionRefId] [bigint] NOT NULL,
-	[MtpReasonRefId] [bigint] NOT NULL,
-	[Contraception] [nvarchar](50) NOT NULL,
-	[MtpComplicationRefId] [bigint] NOT NULL,
-	[MtpAdmissionDate] [date] NULL,
-	[MTPAdmissionTime] [time](7) NULL,
-	[MTPProcedureDate] [date] NULL,
-	[MTPPRocedureTime] [time](7) NULL,
-	[MTPDischargeDate] [date] NULL,
-	[MTPDischargeTime] [time](7) NULL,
-	[MTPRemark] [nvarchar](2000) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[isMisMatchSrNos] [bit] NULL,
- CONSTRAINT [PK_tblMTP] PRIMARY KEY CLUSTERED 
-(
-	[MTPId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblMTP_04032025]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblMTP_04032025](
-	[MTPId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NULL,
-	[VisitId] [bigint] NOT NULL,
-	[SrNoAccMonth] [int] NULL,
-	[SrNoAccYear] [int] NULL,
-	[MtpUTWeeks] [int] NOT NULL,
-	[RMP2] [nvarchar](50) NULL,
-	[LiveMaleFemale] [nvarchar](50) NOT NULL,
-	[ReligionRefId] [bigint] NOT NULL,
-	[MtpReasonRefId] [bigint] NOT NULL,
-	[Contraception] [nvarchar](50) NOT NULL,
-	[MtpComplicationRefId] [bigint] NOT NULL,
-	[MtpAdmissionDate] [date] NOT NULL,
-	[MTPAdmissionTime] [time](7) NOT NULL,
-	[MTPProcedureDate] [date] NOT NULL,
-	[MTPPRocedureTime] [time](7) NOT NULL,
-	[MTPDischargeDate] [date] NOT NULL,
-	[MTPDischargeTime] [time](7) NOT NULL,
-	[MTPRemark] [nvarchar](2000) NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[isMisMatchSrNos] [bit] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblOvulationProfile]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblOvulationProfile](
-	[ProfileId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[OPDay] [int] NOT NULL,
-	[OPDate] [date] NOT NULL,
-	[OPTime] [time](7) NOT NULL,
-	[UtBloodFlow] [nvarchar](2000) NULL,
-	[OvarianBloodFlow] [nvarchar](2000) NULL,
-	[RightOverianFollicle] [nvarchar](50) NULL,
-	[LeftOverianFollicle] [nvarchar](50) NULL,
-	[Endometrium] [nvarchar](50) NULL,
-	[OvulationProfileRemark] [nvarchar](2000) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblOvulationProfile] PRIMARY KEY CLUSTERED 
-(
-	[ProfileId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblPatientCases]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblPatientCases](
-	[CaseId] [bigint] IDENTITY(1,1) NOT NULL,
-	[CaseRegNo] [nvarchar](100) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[FirstName] [nvarchar](100) NOT NULL,
-	[LastName] [nvarchar](100) NOT NULL,
-	[DateOfBirth] [date] NULL,
-	[Age] [int] NOT NULL,
-	[Gender] [int] NOT NULL,
-	[IsMarried] [bit] NOT NULL,
-	[ContatcNo] [nvarchar](50) NULL,
-	[Email] [nvarchar](50) NULL,
-	[PrimaryRelation] [nvarchar](50) NULL,
-	[PrimaryRelativeName] [nvarchar](50) NULL,
-	[PrimaryRelativeNameSuffix] [nvarchar](50) NULL,
-	[PrimaryContactNo] [nvarchar](50) NULL,
-	[SecondaryRelation] [nvarchar](50) NULL,
-	[SecondaryRelativeName] [nvarchar](50) NULL,
-	[SecondaryRelativeNameSuffix] [nchar](10) NULL,
-	[SecondaryContactNo] [nvarchar](50) NULL,
-	[LocationRefId] [int] NOT NULL,
-	[HouseNo] [nvarchar](100) NULL,
-	[Society] [nvarchar](200) NULL,
-	[Landmark] [nvarchar](200) NULL,
-	[Area] [nvarchar](200) NULL,
-	[VillageCity] [nvarchar](50) NULL,
-	[Taluka] [nvarchar](50) NULL,
-	[District] [nvarchar](50) NULL,
-	[State] [nvarchar](50) NULL,
-	[PinCode] [nvarchar](20) NULL,
-	[ReferralIndications] [nvarchar](max) NULL,
-	[IsLatest] [bit] NOT NULL,
-	[IsCaseActive] [bit] NOT NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[weight] [decimal](18, 2) NULL,
-	[Height] [decimal](18, 2) NULL,
-	[City] [nvarchar](500) NULL,
- CONSTRAINT [PK_tblPatientCases_1] PRIMARY KEY CLUSTERED 
-(
-	[CaseId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblPatientDischarge]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblPatientDischarge](
-	[DischargeId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[AdmissionDate] [date] NOT NULL,
-	[AdmissionTime] [time](7) NOT NULL,
-	[DeliveryNo] [int] NOT NULL,
-	[ComplainOfRefId] [bigint] NOT NULL,
-	[DiagnosisRefId] [bigint] NOT NULL,
-	[OperationRefId] [bigint] NOT NULL,
-	[OTDate] [date] NOT NULL,
-	[OTTime] [time](7) NOT NULL,
-	[TreatmentRefId] [bigint] NOT NULL,
-	[AdviceRefId] [bigint] NOT NULL,
-	[HistoryRefId] [bigint] NOT NULL,
-	[AssistedRefId] [bigint] NOT NULL,
-	[DischargeDate] [date] NOT NULL,
-	[DischargeTime] [time](7) NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[Diagnosis] [nvarchar](max) NULL,
-	[Remark] [nvarchar](max) NULL,
-	[ProvisionalDiagnosis] [nvarchar](max) NULL,
- CONSTRAINT [PK_tblPatientDischarge] PRIMARY KEY CLUSTERED 
-(
-	[DischargeId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblPatients]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblPatients](
-	[PatientId] [bigint] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[FirstName] [nvarchar](100) NOT NULL,
-	[LastName] [nvarchar](100) NOT NULL,
-	[DateOfBirth] [date] NULL,
-	[Age] [int] NOT NULL,
-	[Gender] [int] NOT NULL,
-	[IsMarried] [bit] NOT NULL,
-	[ContatcNo] [nvarchar](50) NULL,
-	[Email] [nvarchar](50) NULL,
-	[PrimaryRelation] [nvarchar](50) NULL,
-	[PrimaryRelativeName] [nvarchar](50) NULL,
-	[PrimaryRelativeNameSuffix] [nvarchar](50) NULL,
-	[PrimaryContactNo] [nvarchar](50) NULL,
-	[SecondaryRelation] [nvarchar](50) NULL,
-	[SecondaryRelativeName] [nvarchar](50) NULL,
-	[SecondaryRelativeNameSuffix] [nchar](10) NULL,
-	[SecondaryContactNo] [nvarchar](50) NULL,
-	[LocationRefId] [int] NOT NULL,
-	[HouseNo] [nvarchar](100) NULL,
-	[Society] [nvarchar](200) NULL,
-	[Landmark] [nvarchar](200) NULL,
-	[Area] [nvarchar](200) NULL,
-	[VillageCity] [nvarchar](50) NULL,
-	[Taluka] [nvarchar](50) NULL,
-	[District] [nvarchar](50) NULL,
-	[State] [nvarchar](50) NULL,
-	[PinCode] [nvarchar](20) NULL,
-	[IsPatientActive] [bit] NOT NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[Weight] [decimal](18, 2) NULL,
-	[Height] [decimal](18, 2) NULL,
-	[City] [nvarchar](500) NULL,
- CONSTRAINT [PK_tblPatients] PRIMARY KEY CLUSTERED 
-(
-	[PatientId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblPatients_bkp]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblPatients_bkp](
-	[PatientId] [bigint] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[FirstName] [nvarchar](100) NOT NULL,
-	[LastName] [nvarchar](100) NOT NULL,
-	[DateOfBirth] [date] NULL,
-	[Age] [int] NOT NULL,
-	[Gender] [int] NOT NULL,
-	[IsMarried] [bit] NOT NULL,
-	[ContatcNo] [nvarchar](50) NULL,
-	[Email] [nvarchar](50) NULL,
-	[PrimaryRelation] [nvarchar](50) NULL,
-	[PrimaryRelativeName] [nvarchar](50) NULL,
-	[PrimaryRelativeNameSuffix] [nvarchar](50) NULL,
-	[PrimaryContactNo] [nvarchar](50) NULL,
-	[SecondaryRelation] [nvarchar](50) NULL,
-	[SecondaryRelativeName] [nvarchar](50) NULL,
-	[SecondaryRelativeNameSuffix] [nchar](10) NULL,
-	[SecondaryContactNo] [nvarchar](50) NULL,
-	[LocationRefId] [int] NOT NULL,
-	[HouseNo] [nvarchar](100) NULL,
-	[Society] [nvarchar](200) NULL,
-	[Landmark] [nvarchar](200) NULL,
-	[Area] [nvarchar](200) NULL,
-	[VillageCity] [nvarchar](50) NULL,
-	[Taluka] [nvarchar](50) NULL,
-	[District] [nvarchar](50) NULL,
-	[State] [nvarchar](50) NULL,
-	[PinCode] [nvarchar](20) NULL,
-	[IsPatientActive] [bit] NOT NULL,
-	[IsEdited] [bit] NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblPatientVisits]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblPatientVisits](
-	[VisitId] [bigint] IDENTITY(1,1) NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[OpdDate] [date] NOT NULL,
-	[OpdTime] [time](7) NOT NULL,
-	[PatientType] [nvarchar](50) NULL,
-	[PresentHistory] [nvarchar](2000) NULL,
-	[FamilyHistory] [nvarchar](2000) NULL,
-	[PastHistory] [nvarchar](2000) NULL,
-	[MarriedLife] [int] NULL,
-	[FTNDS_LiveM] [int] NULL,
-	[FTNDS_LiveF] [int] NULL,
-	[FTNDS_DeadM] [int] NULL,
-	[FTNDS_DeadF] [int] NULL,
-	[FTLSCS_LiveM] [int] NULL,
-	[FTLSCS_LiveF] [int] NULL,
-	[FTLSCS_DeadM] [int] NULL,
-	[FTLSCS_DeadF] [int] NULL,
-	[Temperature] [nvarchar](50) NULL,
-	[RespiratoryRate] [int] NULL,
-	[SPO2] [int] NULL,
-	[Pallor] [nvarchar](50) NULL,
-	[Icterus] [nvarchar](50) NULL,
-	[Oedema] [nvarchar](50) NULL,
-	[RespiratorySystem] [nvarchar](500) NULL,
-	[CardiovascularSystem] [nvarchar](500) NULL,
-	[Breast] [nvarchar](50) NULL,
-	[LMPDate] [datetime] NULL,
-	[EDD] [datetime] NULL,
-	[MensturalHistoryDays] [nvarchar](100) NULL,
-	[MensturalDays] [int] NULL,
-	[MensturalSeverity] [nvarchar](100) NULL,
-	[HistoryOf] [nvarchar](1000) NULL,
-	[ComplainOf] [nvarchar](1000) NULL,
-	[Pulse] [int] NULL,
-	[SystolicBloodPressure] [int] NULL,
-	[DaistolicBloodPressure] [int] NULL,
-	[PerAbdomen] [nvarchar](500) NULL,
-	[PerSpeculum] [nvarchar](500) NULL,
-	[PerVaginum] [nvarchar](500) NULL,
-	[Diagnosis] [nvarchar](500) NULL,
-	[Advice] [nvarchar](500) NULL,
-	[Remark] [nvarchar](500) NULL,
-	[FollowupDays] [int] NULL,
-	[FollowupDate] [datetime] NULL,
-	[Parity] [nvarchar](100) NULL,
-	[PreviousDeliveryType] [nvarchar](100) NULL,
-	[PossibleLMP] [datetime] NULL,
-	[WeeksAccordingLMP] [decimal](18, 0) NULL,
-	[PossibleEDD] [datetime] NULL,
-	[WeeksAccordingFirstEDD] [decimal](18, 0) NULL,
-	[FirstEDDAccordingUSG] [datetime] NULL,
-	[PreviousMH] [int] NULL,
-	[IsPAUtSelected] [bit] NULL,
-	[PAUtValue] [nvarchar](50) NULL,
-	[UterusDays] [int] NULL,
-	[UterusWeeks] [int] NULL,
-	[ExternalBallottementPresentingPart] [nvarchar](50) NULL,
-	[FetalHeartSound] [nvarchar](50) NULL,
-	[UterusCondition] [nvarchar](50) NULL,
-	[PrescribedMedicines] [varchar](max) NULL,
-	[IsLatestVisit] [bit] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[PatientId] [bigint] NULL,
-	[UterusWeeksPA] [int] NULL,
-	[Gync_LiveF] [int] NULL,
-	[Gync_LiveM] [int] NULL,
- CONSTRAINT [PK_tblPatientVisits] PRIMARY KEY CLUSTERED 
-(
-	[VisitId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblUsgDetails]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblUsgDetails](
-	[UsgId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[SrNoAccMonth] [int] NULL,
-	[SrNoAccYear] [int] NULL,
-	[USGUterusWeeks] [int] NOT NULL,
-	[USGLMPDate] [date] NULL,
-	[USGDiagnosis] [nvarchar](2000) NULL,
-	[IndicationsForDiagnostic] [nvarchar](2000) NULL,
-	[RefByDoc] [nvarchar](200) NOT NULL,
-	[VillageCity] [nvarchar](200) NOT NULL,
-	[Taluka] [nvarchar](200) NOT NULL,
-	[District] [nvarchar](200) NOT NULL,
-	[PerformingDocName] [nvarchar](200) NULL,
-	[ConsentDate] [date] NULL,
-	[ProcedureDate] [date] NULL,
-	[PDPResultConveyedTo] [nvarchar](200) NULL,
-	[SonographyDate] [date] NULL,
-	[MTPIndication] [nvarchar](2000) NULL,
-	[MTPDone] [nvarchar](20) NULL,
-	[UsgImageNo] [int] NOT NULL,
-	[SonographyResult] [nvarchar](2000) NULL,
-	[OtherSpecify] [nvarchar](2000) NULL,
-	[ChildrenCount] [int] NOT NULL,
-	[ChildrenDetails] [nvarchar](max) NULL,
-	[Remark] [nvarchar](2000) NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[SonographyResult2] [nvarchar](500) NULL,
-	[isMisMatchSrNos] [bit] NULL,
- CONSTRAINT [PK_tblUsgDetails] PRIMARY KEY CLUSTERED 
-(
-	[UsgId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [patient].[tblUsgReports]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [patient].[tblUsgReports](
-	[ReportId] [bigint] IDENTITY(1,1) NOT NULL,
-	[PatientId] [bigint] NOT NULL,
-	[CaseId] [bigint] NOT NULL,
-	[VisitId] [bigint] NOT NULL,
-	[ReportDate] [date] NOT NULL,
-	[ReportTime] [time](7) NOT NULL,
-	[Remark] [nvarchar](2000) NOT NULL,
-	[NoOfFoetusRefId] [bigint] NOT NULL,
-	[CardiacActivityRefId] [bigint] NOT NULL,
-	[PresentationRefId] [bigint] NOT NULL,
-	[GSPregWeek] [int] NULL,
-	[GSPregDay] [int] NULL,
-	[GSEDD] [date] NULL,
-	[CRLPregWeek] [int] NULL,
-	[CRLPregDay] [int] NULL,
-	[CRLEDD] [date] NULL,
-	[FLPregWeek] [int] NULL,
-	[FLPregDay] [int] NULL,
-	[FLEDD] [date] NULL,
-	[BPDPregWeek] [int] NULL,
-	[BPDPregDay] [int] NULL,
-	[BPDEDD] [date] NULL,
-	[HCPregWeek] [int] NULL,
-	[HCPregDay] [int] NULL,
-	[HCEDD] [date] NULL,
-	[ACPregWeek] [int] NULL,
-	[ACPregDay] [int] NULL,
-	[ACEDD] [date] NULL,
-	[AvgPregWeek] [int] NULL,
-	[AvgPregDay] [int] NULL,
-	[AvgEDD] [date] NULL,
-	[PossibleLMP] [date] NULL,
-	[PlacentalLocationRefId] [bigint] NULL,
-	[LiquarAmountRefId] [bigint] NULL,
-	[AnomaliesRefId] [bigint] NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[USGDetailId] [bigint] NULL,
- CONSTRAINT [PK_tblUsgReports] PRIMARY KEY CLUSTERED 
-(
-	[ReportId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [subscription].[tblPlans]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [subscription].[tblPlans](
-	[PlanId] [int] IDENTITY(1,1) NOT NULL,
-	[PlanName] [nvarchar](100) NOT NULL,
-	[Description] [nvarchar](2000) NULL,
-	[Price] [money] NOT NULL,
-	[DiscountPercent] [float] NOT NULL,
-	[Validity] [int] NOT NULL,
-	[IsActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
- CONSTRAINT [PK_tblPlans] PRIMARY KEY CLUSTERED 
-(
-	[PlanId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [subscription].[tblSubscriptions]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [subscription].[tblSubscriptions](
-	[SubscriptionId] [int] IDENTITY(1,1) NOT NULL,
-	[HospitalId] [int] NOT NULL,
-	[PlanId] [int] NOT NULL,
-	[StartDate] [date] NOT NULL,
-	[EndDate] [date] NOT NULL,
-	[BasePrice] [money] NOT NULL,
-	[TaxPercentage] [float] NOT NULL,
-	[TaxAmount] [float] NOT NULL,
-	[DiscountPercentage] [float] NOT NULL,
-	[DiscountAmount] [float] NOT NULL,
-	[TotalAmount] [money] NOT NULL,
-	[SubscriptionTypeId] [tinyint] NOT NULL,
-	[LicenseKey] [nvarchar](100) NULL,
-	[LicenseCount] [int] NULL,
-	[InstalledCount] [int] NULL,
-	[Remarks] [nvarchar](2000) NULL,
-	[IsSubscriptionActive] [bit] NOT NULL,
-	[IsEdited] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL,
-	[UpdatedDate] [datetime] NULL,
-	[CreatedBy] [bigint] NULL,
-	[UpdatedBy] [bigint] NULL,
-	[AttendanceAccess] [bit] NULL,
- CONSTRAINT [PK_tblSubscriptions] PRIMARY KEY CLUSTERED 
-(
-	[SubscriptionId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [sync].[tblFirstNames]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [sync].[tblFirstNames](
-	[FirstName] [nvarchar](100) NOT NULL,
-	[IsSyncPending] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [sync].[tblLastNames]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [sync].[tblLastNames](
-	[LastName] [nvarchar](100) NOT NULL,
-	[IsSyncPending] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [sync].[tblMedicineNames]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [sync].[tblMedicineNames](
-	[MedicineName] [nvarchar](100) NOT NULL,
-	[IsSyncPending] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [sync].[tblStates]    Script Date: 13-02-2026 09:30:14 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [sync].[tblStates](
-	[State] [nvarchar](200) NOT NULL,
-	[Language] [nvarchar](50) NOT NULL,
-	[IsSyncPending] [bit] NOT NULL,
-	[EntryDate] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-ALTER TABLE [appadvertise].[tbl_AdvertisementDetail] ADD  DEFAULT ((0)) FOR [SortOrder]
-GO
-ALTER TABLE [appadvertise].[tbl_AdvertisementMaster] ADD  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [appadvertise].[tbl_AdvertisementMaster] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [appadvertise].[tbl_AdvertisementMaster] ADD  DEFAULT (getdate()) FOR [LastSyncDate]
-GO
-ALTER TABLE [common].[settingsMapping] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_ModuleFields] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_ModuleFields] ADD  DEFAULT ((1)) FOR [isActive]
-GO
-ALTER TABLE [common].[tbl_SettingModuleDetails] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_SettingModules] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [isValid]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  CONSTRAINT [DF_tbl_UserSettingConfiguration_Visited]  DEFAULT ((0)) FOR [Visited]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((1)) FOR [cStatus]
-GO
-ALTER TABLE [common].[tblAppModuleRights] ADD  CONSTRAINT [DF_tblAppModuleRights_IsRightActive]  DEFAULT ((1)) FOR [IsRightActive]
-GO
-ALTER TABLE [common].[tblAppModuleRights] ADD  CONSTRAINT [DF_tblAppModuleRights_IsAdminRight]  DEFAULT ((0)) FOR [IsAdminRight]
-GO
-ALTER TABLE [common].[tblAppModuleRights] ADD  CONSTRAINT [DF_tblAppModuleRights_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [common].[tblAppModuleRights] ADD  CONSTRAINT [DF_tblAppModuleRights_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
-GO
-ALTER TABLE [common].[tblEntityMaster] ADD  CONSTRAINT [DF_tblEntityMaster_IsPublic]  DEFAULT ((1)) FOR [IsPublic]
-GO
-ALTER TABLE [common].[tblEntityMaster] ADD  CONSTRAINT [DF_tblEntityMaster_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [common].[tblEntityMaster] ADD  CONSTRAINT [DF_tblEntityMaster_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [common].[tblEntityMaster] ADD  CONSTRAINT [DF_tblEntityMaster_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [common].[tblEntityRecords] ADD  CONSTRAINT [DF_tblEntityRecords_Sequence]  DEFAULT ((0)) FOR [SequenceNo]
-GO
-ALTER TABLE [common].[tblEntityRecords] ADD  CONSTRAINT [DF_tblEntityRecords_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [common].[tblEntityRecords] ADD  CONSTRAINT [DF_tblEntityRecords_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [common].[tblEntityRecords] ADD  CONSTRAINT [DF_tblEntityRecords_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [common].[tblGroups] ADD  CONSTRAINT [DF_tblGroups_IsGroupActive]  DEFAULT ((1)) FOR [IsGroupActive]
-GO
-ALTER TABLE [common].[tblGroups] ADD  CONSTRAINT [DF_tblGroups_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [common].[tblGroups] ADD  CONSTRAINT [DF_tblGroups_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [dbo].[SqlErrorLog] ADD  DEFAULT (getdate()) FOR [ErrorDate]
-GO
-ALTER TABLE [dbo].[tbl_BackupSceduleLog] ADD  DEFAULT (getdate()) FOR [BackupTime]
-GO
-ALTER TABLE [dbo].[tbl_BackupSceduleLog] ADD  DEFAULT ((0)) FOR [IsSuccess]
-GO
-ALTER TABLE [dbo].[tbl_BackupSceduleLog] ADD  DEFAULT ((1)) FOR [Cstaus]
-GO
-ALTER TABLE [dbo].[tbl_BackupSceduleLog] ADD  DEFAULT (getdate()) FOR [CreateTime]
-GO
-ALTER TABLE [dbo].[tbl_status_Execution] ADD  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [dbo].[tblBillItem] ADD  CONSTRAINT [DF_Table_1_IsVoucherActive]  DEFAULT ((1)) FOR [IsItemActive]
-GO
-ALTER TABLE [dbo].[tblBillItem] ADD  CONSTRAINT [DF_tblBillItem_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [dbo].[tblBillItem] ADD  CONSTRAINT [DF_tblBillItem_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [dbo].[tblOpdRecord] ADD  CONSTRAINT [DF_tblOpdRecord_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tbl_reportHeaderImages] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [hospital].[tbl_reportHeaderImages] ADD  DEFAULT ((1)) FOR [cStatus]
-GO
-ALTER TABLE [hospital].[tbl_UserSettings] ADD  DEFAULT ((0)) FOR [isActive]
-GO
-ALTER TABLE [hospital].[tbl_UserSettings] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [hospital].[tbl_UserTemplateSettings] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [hospital].[tbl_UserTemplateSettings] ADD  DEFAULT ((0)) FOR [IsTemplateSelect]
-GO
-ALTER TABLE [hospital].[tbl_UserVerification] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [hospital].[tblAdvice] ADD  CONSTRAINT [DF_tblAdvice_IsAdviceActive]  DEFAULT ((1)) FOR [IsAdviceActive]
-GO
-ALTER TABLE [hospital].[tblAdvice] ADD  CONSTRAINT [DF_tblAdvice_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblAdvice] ADD  CONSTRAINT [DF_tblAdvice_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblDiagnosis] ADD  CONSTRAINT [DF_tblDiagnosis_IsUterusWeek]  DEFAULT ((0)) FOR [IsUterusWeek]
-GO
-ALTER TABLE [hospital].[tblDiagnosis] ADD  CONSTRAINT [DF_tblDiagnosis_IsDiagnosisActive]  DEFAULT ((1)) FOR [IsDiagnosisActive]
-GO
-ALTER TABLE [hospital].[tblDiagnosis] ADD  CONSTRAINT [DF_tblDiagnosis_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblDiagnosis] ADD  CONSTRAINT [DF_tblDiagnosis_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblDiagnosis_11022025] ADD  DEFAULT ('====') FOR [_testingColumn]
-GO
-ALTER TABLE [hospital].[tblHospital] ADD  CONSTRAINT [DF_tblHospital_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [hospital].[tblHospital] ADD  CONSTRAINT [DF_tblHospital_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblHospital] ADD  CONSTRAINT [DF_tblHospital_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblHospitalContacts] ADD  CONSTRAINT [DF_tblHospitalContacts_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblHospitalContacts] ADD  CONSTRAINT [DF_tblHospitalContacts_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_DocSequenceNo]  DEFAULT ((0)) FOR [DocSequenceNo]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_UserStatus]  DEFAULT ((1)) FOR [EmployeeTypeId]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_LoginAccess]  DEFAULT ((0)) FOR [LoginAccessTypeId]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_IsUserActive]  DEFAULT ((1)) FOR [IsUserActive]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblHospitalUsers] ADD  CONSTRAINT [DF_tblHospitalUsers_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblItems] ADD  CONSTRAINT [DF_tblItems_IsItemActive]  DEFAULT ((1)) FOR [IsItemActive]
-GO
-ALTER TABLE [hospital].[tblItems] ADD  CONSTRAINT [DF_tblItems_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblItems] ADD  CONSTRAINT [DF_tblItems_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblMedicine] ADD  CONSTRAINT [DF_tblMedicine_IsMedicineActive]  DEFAULT ((1)) FOR [IsMedicineActive]
-GO
-ALTER TABLE [hospital].[tblMedicine] ADD  CONSTRAINT [DF_tblMedicine_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblMedicine] ADD  CONSTRAINT [DF_tblMedicine_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblMedicine] ADD  DEFAULT ((0)) FOR [IsSyncFromServer]
-GO
-ALTER TABLE [hospital].[tblReportHeader] ADD  CONSTRAINT [DF_tblReportHeader_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblReportHeader] ADD  CONSTRAINT [DF_tblReportHeader_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [hospital].[tblReportHeader] ADD  DEFAULT ((0)) FOR [IsHeaderSelect]
-GO
-ALTER TABLE [hospital].[tblReportHeader] ADD  DEFAULT ((0)) FOR [BGColourFullTemplate]
-GO
-ALTER TABLE [hospital].[tblReportHeader] ADD  DEFAULT ((0)) FOR [FontFamilyFullTemplate]
-GO
-ALTER TABLE [hospital].[tblUserLogin] ADD  CONSTRAINT [DF_tblUserLogin_LoginStatus]  DEFAULT ((1)) FOR [LoginAccessStatus]
-GO
-ALTER TABLE [hospital].[tblUserLogin] ADD  CONSTRAINT [DF_tblUserLogin_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [hospital].[tblUserLogin] ADD  CONSTRAINT [DF_tblUserLogin_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[TblCity] ADD  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [location].[TblCity] ADD  DEFAULT ((0)) FOR [IsEdit]
-GO
-ALTER TABLE [location].[TblCity] ADD  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[TblCity] ADD  DEFAULT ((1)) FOR [CreateBy]
-GO
-ALTER TABLE [location].[TblCity] ADD  DEFAULT ((1)) FOR [UpdateBy]
-GO
-ALTER TABLE [location].[tblDistrict] ADD  CONSTRAINT [DF_tblDistrict_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [location].[tblDistrict] ADD  CONSTRAINT [DF_tblDistrict_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [location].[tblDistrict] ADD  CONSTRAINT [DF_tblDistrict_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[tblDistrict] ADD  DEFAULT ((1)) FOR [IsDistrict]
-GO
-ALTER TABLE [location].[tblState] ADD  CONSTRAINT [DF_Table_1_IsUserActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [location].[tblState] ADD  CONSTRAINT [DF_tblState_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [location].[tblState] ADD  CONSTRAINT [DF_tblState_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[tblTaluka] ADD  CONSTRAINT [DF_tblTaluka_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [location].[tblTaluka] ADD  CONSTRAINT [DF_tblTaluka_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [location].[tblTaluka] ADD  CONSTRAINT [DF_tblTaluka_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[tblTaluka] ADD  DEFAULT ((1)) FOR [IsTaluka]
-GO
-ALTER TABLE [location].[tblTaluka] ADD  DEFAULT ((0)) FOR [AreaId]
-GO
-ALTER TABLE [location].[tblVillageCity] ADD  CONSTRAINT [DF_tblVillageCity_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [location].[tblVillageCity] ADD  CONSTRAINT [DF_tblVillageCity_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [location].[tblVillageCity] ADD  CONSTRAINT [DF_tblVillageCity_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [location].[tblVillageCity] ADD  DEFAULT ((1)) FOR [IsVillageCity]
-GO
-ALTER TABLE [patient].[tbl_DischargeCardGroup] ADD  DEFAULT ((1)) FOR [Cstatus]
-GO
-ALTER TABLE [patient].[tbl_DischargeCardGroup] ADD  DEFAULT ((0)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tbl_DischargeCardGroup] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [patient].[tbl_DischargeCardMedicines] ADD  DEFAULT ((1)) FOR [Cstatus]
-GO
-ALTER TABLE [patient].[tbl_DischargeCardMedicines] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [patient].[tbl_husbandName] ADD  DEFAULT ((1)) FOR [cstatus]
-GO
-ALTER TABLE [patient].[tbl_husbandName] ADD  DEFAULT (getdate()) FOR [createon]
-GO
-ALTER TABLE [patient].[tbl_IndoorRoundRecords] ADD  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tbl_Landmark] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [patient].[tbl_LastName] ADD  DEFAULT ((1)) FOR [cstatus]
-GO
-ALTER TABLE [patient].[tbl_LastName] ADD  DEFAULT (getdate()) FOR [createOn]
-GO
-ALTER TABLE [patient].[tbl_MorePatients] ADD  DEFAULT (getdate()) FOR [CreateOn]
-GO
-ALTER TABLE [patient].[tbl_MorePatients] ADD  DEFAULT ((1)) FOR [CreatedBy]
-GO
-ALTER TABLE [patient].[tbl_OTCharges] ADD  DEFAULT ((1)) FOR [cStatus]
-GO
-ALTER TABLE [patient].[tbl_OTCharges] ADD  DEFAULT (getdate()) FOR [CreatedOn]
-GO
-ALTER TABLE [patient].[tbl_PatientName] ADD  DEFAULT ((1)) FOR [cstatus]
-GO
-ALTER TABLE [patient].[tbl_PatientName] ADD  DEFAULT (getdate()) FOR [createOn]
-GO
-ALTER TABLE [patient].[tbl_regiondetails] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [patient].[tblBill] ADD  CONSTRAINT [DF_tblBill_IsVoucherActive]  DEFAULT ((1)) FOR [IsBillActive]
-GO
-ALTER TABLE [patient].[tblBill] ADD  CONSTRAINT [DF_tblBill_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblBill] ADD  CONSTRAINT [DF_tblBill_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblBillVoucher] ADD  CONSTRAINT [DF_tblBillVoucher_IsVoucherActive]  DEFAULT ((1)) FOR [IsVoucherActive]
-GO
-ALTER TABLE [patient].[tblBillVoucher] ADD  CONSTRAINT [DF_tblBillVoucher_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblBillVoucher] ADD  CONSTRAINT [DF_tblBillVoucher_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords] ADD  CONSTRAINT [DF_Table_1_IsPatientActive]  DEFAULT ((1)) FOR [IsDelActive]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords] ADD  CONSTRAINT [DF_tblDeliveryRecords_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords] ADD  DEFAULT ((0)) FOR [isMisMatchSrNos]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords_otherlanguage] ADD  DEFAULT ((1)) FOR [CStatus]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords_otherlanguage] ADD  DEFAULT (getdate()) FOR [CreateOn]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords_otherlanguage] ADD  DEFAULT ((1)) FOR [CreateBy]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords_otherlanguage] ADD  DEFAULT (getdate()) FOR [UpdatedOn]
-GO
-ALTER TABLE [patient].[tblDeliveryRecords_otherlanguage] ADD  DEFAULT ((1)) FOR [UpdateBy]
-GO
-ALTER TABLE [patient].[tblHistolap] ADD  CONSTRAINT [DF_tblHistolap_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblHistolap] ADD  CONSTRAINT [DF_tblHistolap_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblIndoorRecords] ADD  CONSTRAINT [DF_tblIndoorRecords_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblIndoorRecords] ADD  CONSTRAINT [DF_tblIndoorRecords_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblIndoorRecords] ADD  DEFAULT ((0)) FOR [SrNo]
-GO
-ALTER TABLE [patient].[tblInvestigation] ADD  CONSTRAINT [DF_tblInvestigation_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblInvestigation] ADD  CONSTRAINT [DF_tblInvestigation_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblMTP] ADD  CONSTRAINT [DF_tblMTP_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblMTP] ADD  CONSTRAINT [DF_tblMTP_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblMTP] ADD  DEFAULT ((0)) FOR [isMisMatchSrNos]
-GO
-ALTER TABLE [patient].[tblOvulationProfile] ADD  CONSTRAINT [DF_tblOvulationProfile_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblOvulationProfile] ADD  CONSTRAINT [DF_tblOvulationProfile_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblPatientCases] ADD  CONSTRAINT [DF_tblPatientCases_IsCurrent]  DEFAULT ((1)) FOR [IsLatest]
-GO
-ALTER TABLE [patient].[tblPatientCases] ADD  CONSTRAINT [DF_tblPatientCases_IsCaseActive]  DEFAULT ((1)) FOR [IsCaseActive]
-GO
-ALTER TABLE [patient].[tblPatientCases] ADD  CONSTRAINT [DF_tblPatientCases_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblPatientDischarge] ADD  CONSTRAINT [DF_tblPatientDischarge_IsDelActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [patient].[tblPatientDischarge] ADD  CONSTRAINT [DF_tblPatientDischarge_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblPatients] ADD  CONSTRAINT [DF_tblPatients_IsPatientActive]  DEFAULT ((1)) FOR [IsPatientActive]
-GO
-ALTER TABLE [patient].[tblPatients] ADD  CONSTRAINT [DF_tblPatients_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  CONSTRAINT [DF_tblPatientVisits_IsLatestVisit]  DEFAULT ((1)) FOR [IsLatestVisit]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  CONSTRAINT [DF_tblPatientVisits_IsActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  CONSTRAINT [DF_tblPatientVisits_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  CONSTRAINT [DF_tblPatientVisits_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  DEFAULT ((0)) FOR [Gync_LiveF]
-GO
-ALTER TABLE [patient].[tblPatientVisits] ADD  DEFAULT ((0)) FOR [Gync_LiveM]
-GO
-ALTER TABLE [patient].[tblUsgDetails] ADD  CONSTRAINT [DF_tblUsgDetails_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblUsgDetails] ADD  CONSTRAINT [DF_tblUsgDetails_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [patient].[tblUsgDetails] ADD  DEFAULT ((0)) FOR [isMisMatchSrNos]
-GO
-ALTER TABLE [patient].[tblUsgReports] ADD  CONSTRAINT [DF_tblUsgReports_IsEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [patient].[tblUsgReports] ADD  CONSTRAINT [DF_tblUsgReports_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [subscription].[tblPlans] ADD  CONSTRAINT [DF_Table_1_isPlanActive]  DEFAULT ((1)) FOR [IsActive]
-GO
-ALTER TABLE [subscription].[tblPlans] ADD  CONSTRAINT [DF_tblPlans_isEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [subscription].[tblPlans] ADD  CONSTRAINT [DF_tblPlans_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  CONSTRAINT [DF_tblSubscriptions_LicenseCounter]  DEFAULT ((0)) FOR [LicenseCount]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  CONSTRAINT [DF_tblSubscriptions_InstalledCount]  DEFAULT ((0)) FOR [InstalledCount]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  CONSTRAINT [DF_tblSubscriptions_isSubscriptionActive]  DEFAULT ((1)) FOR [IsSubscriptionActive]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  CONSTRAINT [DF_tblSubscriptions_isEdited]  DEFAULT ((1)) FOR [IsEdited]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  CONSTRAINT [DF_tblSubscriptions_EntryDate]  DEFAULT (getdate()) FOR [EntryDate]
-GO
-ALTER TABLE [subscription].[tblSubscriptions] ADD  DEFAULT ((0)) FOR [AttendanceAccess]
-GO
-/****** Object:  StoredProcedure [appadvertise].[Usp_Manage_Advertisements]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [appadvertise].[Usp_Manage_Advertisements]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3876,7 +426,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_DataLayerForTable]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_DataLayerForTable]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4008,7 +558,7 @@ SET NOCOUNT ON;
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_EntityLayerForTable]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_EntityLayerForTable]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4071,7 +621,7 @@ SET NOCOUNT ON;
  
 END
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_SPForTable]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_AutoGenerate_SPForTable]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4318,7 +868,7 @@ SET NOCOUNT ON;
  --EXEC (@UspQuery )    
 END
 GO
-/****** Object:  StoredProcedure [dbo].[USP_GenBakup]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[USP_GenBakup]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4390,7 +940,7 @@ DECLARE @v_IsSuccess bit=0, @v_Identity as bigint=0, @v_Message varchar(MAX)='',
 	END
 END
 GO
-/****** Object:  StoredProcedure [dbo].[USP_GETDATE]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[USP_GETDATE]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4404,7 +954,7 @@ BEGIN
     SELECT GETDATE() AS CurrentDateTime;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[usp_Login]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[usp_Login]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4518,7 +1068,7 @@ DECLARE @v_userId_Int int, @v_companyId_Int int, @v_ContactId_Int bigint
 END
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Advice]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Advice]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4735,7 +1285,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Area]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Area]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4902,7 +1452,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_AutoSync_Medicines]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_AutoSync_Medicines]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5092,7 +1642,7 @@ GO
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Bills]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Bills]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5505,7 +2055,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_BillVouchers]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_BillVouchers]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5710,7 +2260,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_City]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_City]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5868,7 +2418,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DataSync]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DataSync]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6383,7 +2933,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7522,7 +4072,7 @@ END;
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8005,7 +4555,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13032025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_13032025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8602,7 +5152,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_19042025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_DeliveryRecords_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9208,7 +5758,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Diagnosis]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Diagnosis]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9569,7 +6119,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Districts]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Districts]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9764,7 +6314,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_EntityRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_EntityRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10020,7 +6570,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Groups]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Groups]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10222,7 +6772,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Histolap]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Histolap]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10472,7 +7022,7 @@ GO
 
  --select * from patient.tblHistolap
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Hospitals]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Hospitals]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10773,7 +7323,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11183,7 +7733,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords_19042025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRecords_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11569,7 +8119,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRoundRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_IndoorRoundRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11987,7 +8537,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Items]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Items]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12271,7 +8821,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Medicines]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Medicines]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12698,7 +9248,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ModuleRights]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ModuleRights]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12866,7 +9416,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13711,7 +10261,7 @@ FROM patient.tblMTP mtp with(nolock)
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_13022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_13022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14470,7 +11020,7 @@ FROM patient.tblMTP mtp with(nolock)
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_19042025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_MTPs_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15294,7 +11844,7 @@ FROM patient.tblMTP mtp with(nolock)
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OpdRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OpdRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15432,7 +11982,7 @@ CREATE PROC [dbo].[Usp_Manage_OpdRecords]
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OTCharges]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OTCharges]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15551,7 +12101,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15771,7 +12321,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles_19042025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_OvulationProfiles_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15984,7 +12534,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientDischarge]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientDischarge]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16372,7 +12922,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -18076,7 +14626,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_02072025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_02072025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19632,7 +16182,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_03052025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_03052025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -20999,7 +17549,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_15022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_15022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -22315,7 +18865,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_21102025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_21102025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23886,7 +20436,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_23012024]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_23012024]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -25181,7 +21731,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_30122024]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_30122024]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26475,7 +23025,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_bkp_19_10_2024]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Patients_bkp_19_10_2024]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -27091,7 +23641,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -27995,7 +24545,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_07032025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_07032025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -28587,7 +25137,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_24022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PatientVisits_24022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -29167,7 +25717,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_PincodeLocations]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_PincodeLocations]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -29363,7 +25913,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Plans]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Plans]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -29549,7 +26099,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -29897,7 +26447,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader_BKP]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_ReportHeader_BKP]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30124,7 +26674,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Society]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Society]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30279,7 +26829,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_States]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_States]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30460,7 +27010,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Subscriptions]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Subscriptions]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30693,7 +27243,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30900,7 +27450,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_15_06_2025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_15_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31101,7 +27651,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_16_06_2025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Talukas_16_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31304,7 +27854,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_tblIndoorRecords]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_tblIndoorRecords]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31580,7 +28130,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_Users]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_Users]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32174,7 +28724,7 @@ GO
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UserSettings]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UserSettings]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32679,7 +29229,7 @@ GO
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -33243,7 +29793,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_04032025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_04032025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -33589,7 +30139,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_14032025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_14032025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34119,7 +30669,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_19022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_19022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34448,7 +30998,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_23022025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgDetails_23022025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34792,7 +31342,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35123,7 +31673,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports_19042025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_UsgReports_19042025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35450,7 +32000,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35880,7 +32430,7 @@ GO
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity_16_06_2025]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_Manage_VillageCity_16_06_2025]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36228,7 +32778,7 @@ GO
   END  
  
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_SubscriptionExecution]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_SubscriptionExecution]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36315,7 +32865,7 @@ CREATE PROC [dbo].[Usp_SubscriptionExecution]
 
   END
 GO
-/****** Object:  StoredProcedure [dbo].[Usp_UserTemplateSettings]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [dbo].[Usp_UserTemplateSettings]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36469,7 +33019,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_District]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_District]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36562,7 +33112,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_HusbandNames]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_HusbandNames]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36677,7 +33227,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_Landmarks]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_Landmarks]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36799,7 +33349,7 @@ GO
 
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_LastNames]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_LastNames]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36914,7 +33464,7 @@ GO
 
   END  
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_patientNames]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_patientNames]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37031,7 +33581,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_PinCodes]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_PinCodes]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37131,7 +33681,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_regiondetails]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_regiondetails]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37241,7 +33791,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_states]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_states]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37334,7 +33884,7 @@ GO
  
 
 GO
-/****** Object:  StoredProcedure [patient].[Usp_Manage_taluka]    Script Date: 13-02-2026 09:30:14 ******/
+/****** Object:  StoredProcedure [patient].[Usp_Manage_taluka]    Script Date: 13-02-2026 09:34:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -37426,10 +33976,4 @@ GO
   END  
  
 
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1:Super Admin; 2:Hospital; 3:Hospital User; 4:Patient' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblHospitalContacts', @level2type=N'COLUMN',@level2name=N'ContactEntityType'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1:Current Employee; 0:Ex-Employee;' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblHospitalUsers', @level2type=N'COLUMN',@level2name=N'EmployeeTypeId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'' , @level0type=N'SCHEMA',@level0name=N'hospital', @level1type=N'TABLE',@level1name=N'tblUserLogin', @level2type=N'COLUMN',@level2name=N'LoginAccessStatus'
 GO
