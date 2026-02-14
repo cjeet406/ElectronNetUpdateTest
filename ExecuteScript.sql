@@ -1,4 +1,5 @@
-
+use mydbopd
+	
 /****** Object:  StoredProcedure [patient].[Usp_Manage_taluka]    Script Date: 13-02-2026 09:34:09 ******/
 DROP PROCEDURE [patient].[Usp_Manage_taluka]
 GO
