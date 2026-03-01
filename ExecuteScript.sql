@@ -1,7 +1,7 @@
 use MyDbOPD;
 
 
-USE [MyDbOPD]
+
 GO
 /****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 01-03-2026 16:23:11 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_UserSettingConfiguration]') AND type in (N'U'))
@@ -146,10 +146,7 @@ GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus]) VALUES (91, 1, N'EMP34', N'AddPatient', N'Age', NULL, CAST(N'2026-01-18T17:22:50.570' AS DateTime), NULL, 3, NULL, N'tab', N'text', 0, 1, N'patientForm', 0, 0, 1)
 GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus]) VALUES (92, 1, N'EMP34', N'AddPatient', N'SecondaryRelativeName', NULL, CAST(N'2026-01-18T17:24:04.020' AS DateTime), NULL, 16, NULL, N'tab', N'text', 0, 1, N'patientForm', 0, 0, 1)
-GO
-INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus]) VALUES (93, 1, N'EMP34', N'AddPatient', N'StrPrimaryRelativeNameSuffix', NULL, CAST(N'2026-02-15T12:18:22.970' AS DateTime), NULL, 11, NULL, N'tab', N'text', 0, 1, N'patientForm', 0, 0, 1)
-GO
-INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus]) VALUES (94, 1, N'EMP34', N'AddPatient', N'StrSecondaryRelativeNameSuffix', NULL, CAST(N'2026-02-15T12:19:04.363' AS DateTime), NULL, 17, NULL, N'tab', N'text', 0, 1, N'patientForm', 0, 0, 1)
+
 GO
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
 GO
@@ -161,6 +158,7 @@ ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  CONSTRAINT [DF_tbl_User
 GO
 ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((1)) FOR [cStatus]
 GO
+
 
 
 
