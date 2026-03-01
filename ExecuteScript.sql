@@ -175,6 +175,8 @@ select top 1 @UserCode = UserCode , @UserId = UserId from hospital.tblHospitalUs
 
 update common.tbl_UserSettingConfiguration set userCode = @UserCode , userId = @UserId
 
+
+update common.tblEntityMaster set EntityName = 'Suffix' where EntityName like '%suffi%'
 --------------------------------------------------------
 
 
