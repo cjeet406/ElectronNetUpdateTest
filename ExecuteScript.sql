@@ -1,12 +1,13 @@
 use MyDbOPD;
 
 
+USE [MyDbOPD]
 GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 15-02-2026 15:53:28 ******/
+/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 01-03-2026 16:23:11 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[common].[tbl_UserSettingConfiguration]') AND type in (N'U'))
 DROP TABLE [common].[tbl_UserSettingConfiguration]
 GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 15-02-2026 15:53:28 ******/
+/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 01-03-2026 16:23:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -160,6 +161,7 @@ ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  CONSTRAINT [DF_tbl_User
 GO
 ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((1)) FOR [cStatus]
 GO
+
 
 
 
