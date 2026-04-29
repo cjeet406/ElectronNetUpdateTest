@@ -13,7 +13,7 @@ GO
 /****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 29-12-2025 23:27:06 ******/
 
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
-GO
+
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (37, 1, N'EMP34', N'Consultation', N'.brand-onload', NULL, CAST(N'2025-04-15T22:00:16.180' AS DateTime), NULL, 0, NULL, N'tab', N'table', 1, 1, N'consultation', 0, 0, 0, 1)
 GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (38, 1, N'EMP34', N'Consultation', N'.content-onload', NULL, CAST(N'2025-04-15T22:00:16.180' AS DateTime), NULL, 0, NULL, N'tab', N'table', 1, 1, N'consultation', 0, 0, 1, 1)
@@ -127,8 +127,8 @@ GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (103, 1, N'EMP34', N'Consultation', N'ChargeForRefId', N'205', CAST(N'2026-04-29T23:14:52.227' AS DateTime), NULL, 0, NULL, N'tab', N'select', 0, 1, N'Consultation', 0, 0, 1, 0)
 GO
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
-
 GO
+  
 ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT (getdate()) FOR [createdOn]
 GO
 ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [isValid]
