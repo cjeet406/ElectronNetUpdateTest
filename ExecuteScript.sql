@@ -1,18 +1,13 @@
-use MyDbOPD;
+USE [MyDbOPD]
+GO
 
 
-
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 01-03-2026 16:23:11 ******/
-TRUNCATE TABLE [common].[tbl_UserSettingConfiguration]
-GO
-/****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 01-03-2026 16:23:11 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 truncate table [common].[tbl_UserSettingConfiguration]
 GO
+
+
+
+
 
 
 /****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 29-12-2025 23:27:06 ******/
@@ -153,12 +148,13 @@ ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [Defa
 
 
 
-update common.tbl_ModuleFields set Type = 'text'  WHERE ModuleName = 'AddPatient' AND FieldName like '%suff%'
-
-declare @UserCode nvarchar(max) = '' , @UserId bigint = 0;
-
-select top 1 @UserCode = UserCode , @UserId = UserId from hospital.tblHospitalUsers where UserId = 1
-
-update common.tbl_UserSettingConfiguration set userCode = @UserCode , userId = @UserId
+--------------------------------------
 
 
+declare @UserId bigint = 0
+declare @UserName nvarchar(100) = N''
+
+select top 1 @UserId = UserId , @UserName = UserCode from hospital.tblHospitalUsers where UserId = 1
+
+UPDATE [common].[tbl_UserSettingConfiguration] set userid = @userid , UserCode = @UserName where DefaultSet = 1
+--------------------------------------
