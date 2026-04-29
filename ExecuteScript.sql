@@ -143,7 +143,7 @@ ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((1)) FOR [cSta
 GO
 ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [DefaultSet]
 
-
+GO
 
 
 
