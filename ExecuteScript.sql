@@ -11,10 +11,6 @@ GO
 
 
 /****** Object:  Table [common].[tbl_UserSettingConfiguration]    Script Date: 29-12-2025 23:27:06 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
 GO
