@@ -126,20 +126,15 @@ INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [mod
 GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (103, 1, N'EMP34', N'Consultation', N'ChargeForRefId', N'205', CAST(N'2026-04-29T23:14:52.227' AS DateTime), NULL, 0, NULL, N'tab', N'select', 0, 1, N'Consultation', 0, 0, 1, 0)
 GO
+
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
 GO
   
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT (getdate()) FOR [createdOn]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [isValid]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  CONSTRAINT [DF_tbl_UserSettingConfiguration_Visited]  DEFAULT ((0)) FOR [Visited]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((1)) FOR [cStatus]
-GO
-ALTER TABLE [common].[tbl_UserSettingConfiguration] ADD  DEFAULT ((0)) FOR [DefaultSet]
+--ALTER TABLE [common].[tbl_ModuleFields] ADD  DEFAULT (getdate()) FOR [createdOn]
+--GO
+--ALTER TABLE [common].[tbl_ModuleFields] ADD  DEFAULT ((1)) FOR [isActive]
+--GO
 
-GO
 
 
 
