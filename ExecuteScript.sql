@@ -17,7 +17,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 SET IDENTITY_INSERT [common].[tbl_UserSettingConfiguration] OFF
-
+GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (37, 1, N'EMP34', N'Consultation', N'.brand-onload', NULL, CAST(N'2025-04-15T22:00:16.180' AS DateTime), NULL, 0, NULL, N'tab', N'table', 1, 1, N'consultation', 0, 0, 0, 1)
 GO
 INSERT [common].[tbl_UserSettingConfiguration] ([id], [userId], [userCode], [module], [fieldName], [defaultValue], [createdOn], [updatedOn], [tabIndex], [emptyText], [setting], [inputType], [isValid], [HospitalId], [ModuleFormId], [Visited], [VisitedTabIndex], [cStatus], [DefaultSet]) VALUES (38, 1, N'EMP34', N'Consultation', N'.content-onload', NULL, CAST(N'2025-04-15T22:00:16.180' AS DateTime), NULL, 0, NULL, N'tab', N'table', 1, 1, N'consultation', 0, 0, 1, 1)
