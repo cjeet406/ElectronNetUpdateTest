@@ -1,7 +1,7 @@
 {
-  "latestVersion": "3.1.6",
+  "latestVersion": "3.2.0",
   //"downloadUrl": "https://github.com/cjeet406/ElectronNetUpdateTest/releases/download/v3.1.4/Electron.NET.App.Setup.3.1.4.exe",
-  "downloadUrl": "https://github.com/cjeet406/ElectronNetUpdateTest/releases/download/v3.1.6/Ezee.Obs.Setup.3.1.6.exe",
+  "downloadUrl": "https://github.com/cjeet406/ElectronNetUpdateTest/releases/download/v3.2.0/Ezee.Obs.Setup.3.2.0.exe",
   "isMandatory": false,
   "notes": "Features new version?? very flexible."
 }
